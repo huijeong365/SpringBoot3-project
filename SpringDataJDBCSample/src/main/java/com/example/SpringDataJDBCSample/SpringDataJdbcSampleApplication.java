@@ -15,19 +15,17 @@ public class SpringDataJdbcSampleApplication {
 				.getBean(SpringDataJdbcSampleApplication.class).execute();
 	}
 	@Autowired
-	MemberCrudRepository repository; // 1)
+	MemberCrudRepository repository;
 
 	private void execute(){
-
 		//등록
 		executeInsert();
 		//모든 데이터 취득
 		executeSelect();
-
 	}
 
 	private void executeInsert(){
-		Member member = new Member(3, "장보고");
+		Member member = new Member(null, "이순신");
 		member = repository.save(member);
 		System.out.println("등록 데이터:" + member);
 	}

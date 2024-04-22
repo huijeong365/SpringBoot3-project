@@ -1,0 +1,105 @@
+﻿html{overflow-y: scroll;}
+*{margin: 0; padding: 0;}
+ul, li{list-style: none;}
+a{text-decoration: none; color: #333333;}
+img{border: 0;}
+body{font-family: "Malgun Gothic", "맑은 고딕", "돋움", sans-serif;}
+.cf:after{content: ''; display: block; clear: both;}
+.fl{float: left;}
+.fr{float: right;}
+h1{display: none;}
+.balloon{background: #fff; color: #555; padding: 3px 10px; position: absolute; display: none; font-size: 14px; font-weight: bold; border: 1px solid #333; border-radius: 5px;}
+.balloon:after{content:""; display:block; float:left; background:url(../images/favi.png) no-repeat center center; width:18px; height:18px; margin: 0px 5px 0 5px; }
+
+
+
+/* 메인헤더 */
+.mainHeader{background-color:#ffffff; width: 100%; height: 115px; border-bottom: 1px solid #d9dbe1;}
+
+    .gnbWrap{position: relative; width: 1420px; margin: 0 auto;}
+        .mainGnb{position: absolute; top: 0px; right: 0px; padding-top: 19px; padding-bottom: 13px; }
+        .mainGnb > ul{overflow: hidden;}
+        .mainGnb > ul > li{float: left;  padding: 4px 19px;}
+        .mainGnb > ul > li img{padding-right: 5px;}
+        .mainGnb > ul > li > a{display: block; font-weight: bold; color: #333333; font-size: 13px; height: 20px; line-height: 20px; }
+        .mainGnb > ul > li > a:hover{border:1px solid #0064de; border-radius: 3px; margin: -1px;}
+    
+    #mainMenu{position: relative; top: 45px; height: 70px;}
+        .menuWrap{width: 1420px; margin: 0 auto;}
+            #mainLogo{width: 300px; float: left; padding-top: 2px;}
+            #mainLogo .logoKoreanair{width: 180px; height: 54px;}
+            #mainLogo .logoSkyteam{width: 38px; height: 54px;} 
+
+            #mainLogin{width: 75px; float: right; height: 29px; padding-left: 10px; padding-top: 21px;}
+            #mainLogin .loginButtonWrap{width: 77px; height:29px; border-radius: 25px; border:0; padding-top: 2px; padding-left: 2px;  }
+            #mainLogin .loginButtonWrap:hover{border:1px solid  #0064de; margin: -1px;}
+            #mainLogin .loginButtonWrap #loginButton{width: 75px; height:27px; border-radius: 25px; border:0; background-color: #00256c; cursor: pointer; color: #ffffff; font-weight: bold;}
+                
+            #mainSearch{width: 240px; float: right; height: 38px; padding-top: 16px;}
+            #mainSearch .searchButtonWrap{width: 240px; height: 38px; border-radius: 25px; border:0; padding-top: 2px; padding-left: 2px; }
+            #mainSearch .searchButtonWrap:hover{border: 1px solid #0064de; padding: 1px;}
+            #mainSearch .searchButtonWrap #searchButton{width: 238px; height: 36px; border-radius: 25px; border:0; text-align: left; padding-left: 14px; font-size: 14px; color:#767676; background-color: #f3f4f8; cursor: pointer;}
+            #mainSearch .searchButtonWrap #searchButton img{width: 12px; padding-left: 15px;}
+                
+            .oneDepthMenu{width: 605px;height: 70px; margin: 0 auto;}
+            .oneDepthMenu>li{float:left; padding: 0px 20px; height: 50px;}
+            .oneDepthMenu>li:hover{padding-bottom: 15px; border-bottom: 5px solid #00256c;}
+            .oneDepthMenu>li img{padding-bottom: 3px;}
+            .oneDepthMenu>li>a{display: block; float: left; padding: 0px 12px; line-height: 70px; height: 70px; color: #333333; font-weight: bold; font-size: 18px;}
+            .oneDepthMenu>li:hover .twoDepthWrap{display: block;} 
+            .oneDepthMenu>li.fifthMenu:hover .twoDepthWrap{display: none;} 
+
+            .twoDepthWrap{width: 100%; background-color: #f8f9fc; position: absolute; top: 70px; left: 0px; display: none; float:left; border-top: 1px solid #d9dbe1; z-index: 99;}
+            .twoDepthMenu{width: 1300px; margin: 0 auto; padding: 60px 60px 50px;}
+            .twoDepthContents{width: 1300px; height: 314px; margin: 0 auto; }
+            .contentsArticle{width: 980px; float: left;}
+            .contentsPhoto{width: 300px; margin-left: 20px; float: right;}
+            .contentsPhoto>ul span{position: absolute; font-size: 14px; font-weight: bold ; color: #333333; padding: 33px;}
+            .oneDepthMenu>.firstMenu .twoDepthContents .contentsPhoto .banners li:first-child{background: url(../images/booking.jpg) no-repeat; background-position: center; background-size: contain; width: 275px; height: 147px; cursor: pointer; margin-bottom: 20px; box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);}
+            .oneDepthMenu>.firstMenu .twoDepthContents .contentsPhoto .banners li:last-child{background: url(../images/awardseat.jpg) no-repeat; background-position: center; background-size: contain; width: 275px; height: 147px; cursor: pointer; box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);}
+            .oneDepthMenu>.secondMenu .twoDepthContents .contentsPhoto .banners li:first-child{background: url(../images/lounge.jpg) no-repeat; background-position: center; background-size: contain; width: 275px; height: 147px; cursor: pointer; margin-bottom: 20px; box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);}
+            .oneDepthMenu>.secondMenu .twoDepthContents .contentsPhoto .banners li:last-child{background: url(../images/sherpanew.jpg) no-repeat; background-position: center; background-size: contain; width: 275px; height: 147px; cursor: pointer; box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);}
+            .oneDepthMenu>.thirdMenu .twoDepthContents .contentsPhoto .banners li:first-child{background: url(../images/meal.jpg) no-repeat; background-position: center; background-size: contain; width: 275px; height: 147px; cursor: pointer; margin-bottom: 20px; box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);}
+            .oneDepthMenu>.thirdMenu .twoDepthContents .contentsPhoto .banners li:last-child{background: url(../images/enter.jpg) no-repeat; background-position: center; background-size: contain; width: 275px; height: 147px; cursor: pointer; box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);}
+            .oneDepthMenu>.fourthMenu .twoDepthContents .contentsPhoto .banners li:first-child{background: url(../images/hotpick.png) no-repeat; background-position: center; background-size: contain; width: 275px; height: 147px; cursor: pointer; margin-bottom: 20px; box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);}
+            .oneDepthMenu>.fourthMenu .twoDepthContents .contentsPhoto .banners li:last-child{background: url(../images/mall.jpg) no-repeat; background-position: center; background-size: contain; width: 275px; height: 147px; cursor: pointer; box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);}
+            .twoDepthMenu>.twoDepthContents>.contentsArticle>.article{width: 240px; height: 320px; margin-right: 25px; float:left; border-radius: 6px; box-shadow: 0 2px 7px 0 rgba(0,0,0,.1); padding:30px; background-color: #ffffff; margin-bottom: 30px;}
+            .twoDepthMenu>.twoDepthContents>.contentsArticle h2{font-weight: 600; font-size: 16px; color: #333333; margin: 0 0 20px;}
+            .twoDepthMenu>.twoDepthContents>.contentsArticle a{font-size: 14px; color: #333333; line-height: 35px;}
+
+            .fifthMenu .twoDepthMenu h2{color: #00256c; margin-bottom: 20px;}
+            .fifthMenu .twoDepthMenu dl{color: #767676; }
+            .fifthMenu .twoDepthMenu dl dt{display: block; font-weight: bold; float:left; content: ''; display: block; clear: both; width: 200px; height: 35px; color:#333333; }
+            .fifthMenu .twoDepthMenu ul>li{color: #767676; float:left; margin:0 30px 0 20px; list-style:disc;}
+            .fifthMenu .twoDepthMenu >div{margin-bottom: 20px;}
+            #totalClose{position: absolute; bottom: 12px; right: 34px;} 
+
+/* 메인푸터 */
+.shortMenuSection{background-color: #f3f4f8;  border-top: 1px solid #d9dbe1; padding: 39px 25px 35px;}
+    #shortMenu{width: 1420px; margin: 0 auto; height: 294px;}
+        .shortMenuCnt1{margin-top: 50px; height: 200px; width: 1080px;}
+        .shortMenuCnt1>ul>li{float: left; width: 25%; line-height: 200%;}
+        .shortMenuCnt1>ul>li ul li a{color: #333333; font-size: 14px;}
+        .shortMenuCnt1>ul>li .bold{font-weight: bold;}
+        .shortMenuCnt1>ul>li h3{font-weight: bold; color: #333333; margin-bottom: 10px;}
+        .shortMenuCnt2{margin-top: 50px; float: right;}
+        .shortMenuCnt2 .sns img{padding-left: 20px;}
+        .shortMenuCnt2 .app{float: right; padding-top: 25px;}
+        .shortMenuCnt2 .app img{padding-left: 20px;}
+#contact{margin: 0 auto; padding: 20px; width:1420px; background-color: #ffffff;} 
+    #contact .contactName{float: left;} 
+    #contact .contactName>strong{font-size: 14px; color: #00256c; font-weight: bold; float: left; margin-right: 20px;} 
+    #contact .contactName>p{font-size: 14px; color: #767676; float: left; margin-left: 10px; padding-left: 10px;} 
+    #contact .contactName> .blank{margin-left: 0px; padding-left: 0px;} 
+    #contact .contactInfo{float: right;} 
+    #contact .copyright{font-size: 14px; color: #767676; padding-top: 72px;} 
+
+
+    #quick_menu{width: 100px; text-align: center; position: absolute; top: 176px; right: 96px; background-color: #f6f7f7; border-radius: 7px; border: 1px solid #00256c; z-index: 10; overflow: hidden;}
+#quick_menu h3{font-size: 14px; padding: 10px 0; color: #00256c;}
+#quick_menu ul li{padding: 15px; height: 10px; border-top: 1px solid #00256c; text-align: left; background-color: #f6f7f7; font-size: 12px; line-height: 10px;}
+#quick_menu ul li:hover{background-color: rgba(0,100,222,0.5); color: #ffffff;}
+#quick_menu ul li:hover a{color: #ffffff;}
+#quick_menu ul li.last{padding: 0px; overflow: visible; }
+#quick_menu ul li a.quick_btn{background: #9e9b98;}
+    

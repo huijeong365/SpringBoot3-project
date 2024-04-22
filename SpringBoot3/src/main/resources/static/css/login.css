@@ -1,0 +1,58 @@
+﻿html{overflow-y: scroll;}
+*{margin: 0; padding: 0;}
+ul, li{list-style: none;}
+a{text-decoration: none;}
+img{border: 0;}
+body{font-family: '맑은 고딕', '돋움', sans-serif;}
+.cf:after{content: ''; display: block; clear: both;}
+.fl{float: left;}
+.fr{float: right;}
+.balloon{background: #fff; color: #555; padding: 3px 10px; position: absolute; display: none; font-size: 14px; font-weight: bold; border: 1px solid #333; border-radius: 5px;}
+.balloon:after{content:""; display:block; float:left; background:url(../images/favi.png) no-repeat center center; width:18px; height:18px; margin: 0px 5px 0 5px; }
+
+
+#login{padding: 66px 0 80px; background:linear-gradient(to bottom,#8bbdf8 -75%,#e9f3fb 89%);}
+    .loginWrap{width: 583px; margin: 0 auto; box-shadow: 4px 10px 20px 0 rgba(0,25,72,.1);}
+        .loginTop{width: 455px; margin: 0 auto;background-color: #ffffff; padding: 50px 64px 0px 64px;}
+            .loginTitle{margin-bottom: 35px;}
+            .loginTitle h2{font-size: 34px; color: #333333;}
+
+            #selection{margin-bottom: 30px; height: 40px; }     
+            #selection input#user{width: 20px; height: 20px; vertical-align: middle;}           
+            #selection label.user{font-size: 16px; padding-left: 7px; margin-right: 142px; color: #333333;}    
+            #selection input#skypass{width: 20px; height: 20px; vertical-align: middle;}           
+            #selection label.skypass{font-size: 16px; padding-left: 7px; color: #333333;} 
+
+            #id{margin-bottom: 51px; border-bottom: 1px solid #00256c;}
+            #id p{color: #333333; font-size: 14px; margin-bottom: 15px;}
+            #id input{width: 100%; height: 50px; background: none; border: none; font-size: 16px; }
+
+            #passWord{margin-bottom: 49px; border-bottom: 1px solid #00256c;}
+            #passWord p{color: #333333; font-size: 14px; margin-bottom: 15px;}
+            #passWord input{width: 100%; height: 50px; background: none; border: none; font-size: 16px;}
+            .guide{color: #cccccc;}
+            .save{margin-bottom: 22px;}
+            .save input{height: 20px; width: 20px;}
+            .save label{font-size: 17px; margin-left: 7px; color: #333333;}
+
+            #submit{margin-bottom: 24px;}
+            #submit button{ height: 69px; width: 100%; border: none; border-radius: 14px; background-color: #00256c; color: #ffffff; font-size: 18px; font-weight: bold; cursor: pointer;}
+        
+            #idFind{margin-bottom: 30px; height: 30px;}
+            #idFind a.first{font-size: 16px; margin-left: 60px; color:#333333;}
+            #idFind a.first:hover{text-decoration: underline;}
+            #idFind a.last{font-size: 16px; margin-left: 111px; color:#333333;}
+            #idFind a.last:hover{text-decoration: underline;}
+            #idFind img{height: 12px;}
+
+            #findSNS{padding-bottom: 35px;}
+            #findSNS p{text-align: center; color: #333333; font-size: 16px; margin-bottom: 20px;}
+            #findSNS ul li{float: left; height: 42px; width: 205px; margin: 5px 10px; border: 1px solid #00256c; border-radius: 11px; line-height: 42px; cursor: pointer;}
+            #findSNS ul li:hover{background-color: #00256c;}
+            #findSNS ul li:hover span{color: #ffffff;}
+            #findSNS ul li img{vertical-align: middle; padding-left: 10px; height: 25px;}
+            #findSNS ul li span{text-align: center; font-size: 15px; color: #333333; margin-left: 59px; font-weight: bold;}
+        
+            #memberShip{margin: 0 auto;}
+            #memberShip button{height: 75px; width: 100%; background-color: #e6f9ff; font-size: 18px; line-height: 75px; color: #00256c; text-align: center; font-weight: bold; border: none; cursor: pointer;}
+            #memberShip button:hover{background-color: #00256c; color: #ffffff;}

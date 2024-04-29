@@ -7,4 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface TestRepository extends CrudRepository<Test, Integer> {
     @Query("SELECT id FROM test ORDER BY RAND() limit 1") //database와 연결하는 기능
     Integer getRandomId();
+
+
 }

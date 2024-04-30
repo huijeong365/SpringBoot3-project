@@ -113,7 +113,7 @@ public class TestController {
         return "redirect:/test";
     }
 
-    @GetMapping("/play")
+   /* @GetMapping("/play")
     public String showTest(TestForm testForm, Model model){
         Optional<Test> testOpt = service.selectOneRandomTest();
         if(testOpt.isPresent()){
@@ -121,6 +121,23 @@ public class TestController {
             testForm = testFormOpt.get();
         } else {
             model.addAttribute("msg","등록된 문제가 없습니다");
+            return "play";
+        }
+        model.addAttribute("testForm", testForm);
+        return "play";
+    }*/
+
+    Integer nextId = 0;
+    @GetMapping("/play")
+    public String showTest(TestForm testForm, Model model){
+        Optional<Test> testOpt = service.selectOneById(++nextId);
+
+        if(testOpt.isPresent()){
+            Optional<TestForm> testFormOpt = testOpt.map(t -> makeTestForm(t));
+            testForm = testFormOpt.get();
+        } else {
+            model.addAttribute("msg","등록된 문제가 없습니다");
+            nextId = 0;
             return "play";
         }
         model.addAttribute("testForm", testForm);

@@ -18,10 +18,13 @@ public class TestServiceImpl implements TestService{
         return repository.findAll();
     }
 
-    @Override
+   /* @Override
     public Optional<Test> selectOneById(Integer id) {
+
         return repository.findById(id);
-    }
+    }*/
+
+
 
     @Override
     public Optional<Test> selectOneRandomTest() {
@@ -30,6 +33,27 @@ public class TestServiceImpl implements TestService{
             return Optional.empty();
         }
         return repository.findById(randId);
+    }
+
+
+    Integer count = -1;
+    @Override
+    public Optional<Test> selectOneById(Integer id) {
+        Integer startId;
+        Integer endId = repository.endId();
+        count++;
+        startId = count;
+        if(startId > endId){
+            count = -1;
+            startId = count;
+        }
+        Boolean findId = repository.existsById(startId); //다음 아이디가 존재하는지 안하는지 확인
+        while(findId == false){
+            startId++;
+            count = startId;
+            findId = repository.existsById(startId);
+        }
+        return repository.findById(startId);
     }
 
     @Override

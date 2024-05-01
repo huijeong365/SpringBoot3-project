@@ -30,14 +30,50 @@
       </div>
     </div><!-- id="boardSearch" -->
     <div id="boardList" class="cf">
-      <div class="boardHeader cf">
+      <!--<div class="boardHeader cf">
         <div class="headerBox01"><p>번호</p></div>
         <div class="headerBox02"><p>제목</p></div>
         <div class="headerBox03"><p>작성자</p></div>
         <div class="headerBox04"><p>등록일</p></div>
         <div class="headerBox05"><p>조회수</p></div>
-      </div>
-      <div class="boardContent cf">
+      </div>-->
+
+      <table border="1" style="table-layout: fixed;">
+        <tr>
+          <th>번호</th>
+          <th>제목</th>
+          <th>글쓴이</th>
+          <th>내용</th>
+          <th>조회수</th>
+          <th>작성일자</th>
+          <th>변경</th>
+          <th>삭제</th>
+        </tr>
+        <tr th:each="obj : ${list}" align="center">
+          <td th:text="${obj.no}"></td>
+          <td th:text="${obj.title}"></td>
+          <td th:text="${obj.author}"></td>
+          <td th:text="${obj.contents}"></td>
+          <td th:text="${obj.view_count}"></td>
+          <td th:text="${obj.created_date}"></td>
+          <td>
+            <form method="GET" th:action="@{/board/{id}(no=${obj.no})}">
+              <input type="submit" value="변경">
+            </form>
+          </td>
+          <td>
+            <form method="POST" th:action="@{/board/delete}">
+              <input type="hidden" name="no" th:value="${obj.no}">
+              <input type="submit" value="삭제">
+            </form>
+          </td>
+        </tr>
+      </table>
+
+
+
+
+      <!--<div class="boardContent cf">
         <div class="contentBox1"><p>10</p></div>
         <div class="contentBox2"><p><a href="#" tabindex="83"><img src="images/new.png" alt="새글">동에번쩍 서에번쩍 하면 마일리지가 얼마나 쌓이나요?</a></p></div>
         <div class="contentBox3"><p><a href="#" tabindex="84"><span>홍길동</span></a></p></div>
@@ -106,7 +142,7 @@
         <div class="contentBox3"><p><a href="#" tabindex="110"><span>아로미</span></a></p></div>
         <div class="contentBox4"><p>2024/01/13</p></div>
         <div class="contentBox5"><p>5</p></div>
-      </div>
+      </div>-->
     </div><!-- id="boardList" -->
     <div id="boardPagination" class="cf">
       <ul>

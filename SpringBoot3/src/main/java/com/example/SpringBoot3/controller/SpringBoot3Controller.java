@@ -13,13 +13,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/board")
 public class SpringBoot3Controller {
 
    @Autowired
     BoardService service;
 
-    @GetMapping
+    @GetMapping("/board")
     public String showList(Board board, Model model){
         Iterable<Board> list = service.selectAll();
 
@@ -28,37 +27,40 @@ public class SpringBoot3Controller {
         return "board";
     }
 
-    @PostMapping("/insert")
-    public String insert(BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) throws Exception {
-        Board board = new Board();
-        board.setTitle(board.getTitle());
-        board.setAuthor(board.getAuthor());
-        board.setContents(board.getContents());
+    @GetMapping("/board_insert")
+    public String insert() {
+
+        return "board_insert";
+    }
+
+    @PostMapping("/board_save")
+    public String insert_save(Board board) throws Exception {
 
         service.insertBoard(board);
-        redirectAttributes.addFlashAttribute("complete","등록이 완료 되었습니다");
+
         return "redirect:/board";
     }
 
-    @GetMapping("/{id}")
-    public String showUpdate(@PathVariable Integer no, Model model){
+    @GetMapping("/board/{id}")
+    public String detail(@PathVariable Integer no, Model model){
         Optional<Board> boardOpt = service.selectOneByNo(no);
+        model.addAttribute("boardOpt", boardOpt);
 
-        return "board";
+        return "board_detail";
     }
 
-    @PostMapping("/update")
+    @PostMapping("/board/update")
     public String update(BindingResult result, Model model, RedirectAttributes redirectAttributes) throws Exception {
-        Board board = new Board();
+       /* Board board = new Board();
 
         service.updateBoard(board);
         redirectAttributes.addFlashAttribute("complete","변경이 완료 되었습니다");
-        return "redirect:/board/" + board.getNo();
-
+        return "redirect:/board/" + board.getNo();*/
+        return "board";
     }
 
 
-    @PostMapping("/delete")
+    @PostMapping("/board/delete")
     public String delete(@RequestParam("no") String no, Model model, RedirectAttributes redirectAttributes) throws Exception {
         service.deleteBoardByNo(Integer.parseInt(no));
         redirectAttributes.addFlashAttribute("delcomplete","삭제 완료했습니다.");
@@ -72,11 +74,6 @@ public class SpringBoot3Controller {
     public String showViewA(){
 
         return "index";
-    }
-    //@GetMapping("board")
-    public String showViewB(){
-
-        return "board";
     }
     @GetMapping("qna")
     public String showViewC(){

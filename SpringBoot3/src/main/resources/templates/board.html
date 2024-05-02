@@ -15,7 +15,7 @@
     </div><!-- id="boardMenuButton" -->
     <div class="contentsTitle cf">
       <h2>게시판</h2>
-      <button class="showBalloon" title="새글 작성하기">글쓰기</button>
+      <button class="showBalloon" title="새글 작성하기" th:onclick="|location.href='@{/board_insert}'|">글쓰기</button>
     </div><!-- class="contentsTitle" -->
     <div id="boardSearch" class="cf">
       <div class="boardSearchTitle fl">
@@ -30,119 +30,20 @@
       </div>
     </div><!-- id="boardSearch" -->
     <div id="boardList" class="cf">
-      <!--<div class="boardHeader cf">
+      <div class="boardHeader cf">
         <div class="headerBox01"><p>번호</p></div>
         <div class="headerBox02"><p>제목</p></div>
         <div class="headerBox03"><p>작성자</p></div>
         <div class="headerBox04"><p>등록일</p></div>
         <div class="headerBox05"><p>조회수</p></div>
-      </div>-->
-
-      <table border="1" style="table-layout: fixed;">
-        <tr>
-          <th>번호</th>
-          <th>제목</th>
-          <th>글쓴이</th>
-          <th>내용</th>
-          <th>조회수</th>
-          <th>작성일자</th>
-          <th>변경</th>
-          <th>삭제</th>
-        </tr>
-        <tr th:each="obj : ${list}" align="center">
-          <td th:text="${obj.no}"></td>
-          <td th:text="${obj.title}"></td>
-          <td th:text="${obj.author}"></td>
-          <td th:text="${obj.contents}"></td>
-          <td th:text="${obj.view_count}"></td>
-          <td th:text="${obj.created_date}"></td>
-          <td>
-            <form method="GET" th:action="@{/board/{id}(no=${obj.no})}">
-              <input type="submit" value="변경">
-            </form>
-          </td>
-          <td>
-            <form method="POST" th:action="@{/board/delete}">
-              <input type="hidden" name="no" th:value="${obj.no}">
-              <input type="submit" value="삭제">
-            </form>
-          </td>
-        </tr>
-      </table>
-
-
-
-
-      <!--<div class="boardContent cf">
-        <div class="contentBox1"><p>10</p></div>
-        <div class="contentBox2"><p><a href="#" tabindex="83"><img src="images/new.png" alt="새글">동에번쩍 서에번쩍 하면 마일리지가 얼마나 쌓이나요?</a></p></div>
-        <div class="contentBox3"><p><a href="#" tabindex="84"><span>홍길동</span></a></p></div>
-        <div class="contentBox4"><p>2024/02/14</p></div>
-        <div class="contentBox5"><p>11</p></div>
       </div>
-      <div class="boardContent cf">
-        <div class="contentBox1"><p>9</p></div>
-        <div class="contentBox2"><p><a href="#" tabindex="85"><img src="images/new.png" alt="새글">우리아기도 유아나이 적용 되나요?</a></p></div>
-        <div class="contentBox3"><p><a href="#" tabindex="86"><span>다니맘</span></a></p></div>
-        <div class="contentBox4"><p>2024/02/13</p></div>
-        <div class="contentBox5"><p>205</p></div>
+      <div class="boardContent cf" th:each="obj : ${list}">
+        <div class="contentBox1"><p th:text="${obj.no}"></p></div>
+        <div class="contentBox2"><a th:href="@{/board_detail/{no}(no=${obj.no})}"><p th:text="${obj.title}"></p></a></div>
+        <div class="contentBox3"><p th:text="${obj.author}"></p></div>
+        <div class="contentBox4"><p th:text="${obj.created_date}"></div>
+        <div class="contentBox5"><p th:text="${obj.view_count}"></div>
       </div>
-      <div class="boardContent cf">
-        <div class="contentBox1"><p>8</p></div>
-        <div class="contentBox2"><p><a href="#" tabindex="87">국내선 유류할증료가 얼마나 되나요?</a></p></div>
-        <div class="contentBox3"><p><a href="#" tabindex="88"><span>김삿갓</span></a></p></div>
-        <div class="contentBox4"><p>2024/02/11</p></div>
-        <div class="contentBox5"><p>32</p></div>
-      </div>
-      <div class="boardContent cf">
-        <div class="contentBox1"><p>7</p></div>
-        <div class="contentBox2"><p><a href="#" tabindex="97">국제선 유류할증료는 얼마인가요?</a></p></div>
-        <div class="contentBox3"><p><a href="#" tabindex="98"><span>개똥이</span></a></p></div>
-        <div class="contentBox4"><p>2024/01/31</p></div>
-        <div class="contentBox5"><p>101</p></div>
-      </div>
-      <div class="boardContent cf">
-        <div class="contentBox1"><p>6</p></div>
-        <div class="contentBox2"><p><a href="#" tabindex="99">적립된 마일리지는 어디서 볼수 있나요?</a></p></div>
-        <div class="contentBox3"><p><a href="#" tabindex="100"><span>왕눈이</span></a></p></div>
-        <div class="contentBox4"><p>2024/01/28</p></div>
-        <div class="contentBox5"><p>16</p></div>
-      </div>
-      <div class="boardContent cf">
-        <div class="contentBox1"><p>5</p></div>
-        <div class="contentBox2"><p><a href="#" tabindex="101">개인 음식을 기내로 가져갈 수 있나요?</a></p></div>
-        <div class="contentBox3"><p><a href="#" tabindex="102"><span>개굴이</span></a></p></div>
-        <div class="contentBox4"><p>2024/01/27</p></div>
-        <div class="contentBox5"><p>24</p></div>
-      </div>
-      <div class="boardContent cf">
-        <div class="contentBox1"><p>4</p></div>
-        <div class="contentBox2"><p><a href="#" tabindex="103">기내에서 상영하는 영화는 무엇이 있나요?</a></p></div>
-        <div class="contentBox3"><p><a href="#" tabindex="104"><span>두껍이</span></a></p></div>
-        <div class="contentBox4"><p>2024/01/26</p></div>
-        <div class="contentBox5"><p>66</p></div>
-      </div>
-      <div class="boardContent cf">
-        <div class="contentBox1"><p>3</p></div>
-        <div class="contentBox2"><p><a href="#" tabindex="105">환승센터는 어디인가요?</a></p></div>
-        <div class="contentBox3"><p><a href="#" tabindex="106"><span>우루루</span></a></p></div>
-        <div class="contentBox4"><p>2024/01/20</p></div>
-        <div class="contentBox5"><p>78</p></div>
-      </div>
-      <div class="boardContent cf">
-        <div class="contentBox1"><p>2</p></div>
-        <div class="contentBox2"><p><a href="#" tabindex="107">기내식은 맛있나요?</a></p></div>
-        <div class="contentBox3"><p><a href="#" tabindex="108"><span>루팡</span></a></p></div>
-        <div class="contentBox4"><p>2024/01/19</p></div>
-        <div class="contentBox5"><p>566</p></div>
-      </div>
-      <div class="boardContent cf">
-        <div class="contentBox1"><p>1</p></div>
-        <div class="contentBox2"><p><a href="#" tabindex="109">비행기 안에서 전자기기 사용이 가능한가요?</a></p></div>
-        <div class="contentBox3"><p><a href="#" tabindex="110"><span>아로미</span></a></p></div>
-        <div class="contentBox4"><p>2024/01/13</p></div>
-        <div class="contentBox5"><p>5</p></div>
-      </div>-->
     </div><!-- id="boardList" -->
     <div id="boardPagination" class="cf">
       <ul>

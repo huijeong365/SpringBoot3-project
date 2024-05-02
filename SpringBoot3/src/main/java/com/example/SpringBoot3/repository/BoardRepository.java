@@ -6,6 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 
 public interface BoardRepository extends CrudRepository<Board, Integer> {
-    @Query("SELECT * from board order by no asc")
+    @Query("SELECT * FROM board WHERE no ORDER BY no DESC")
     Integer getNo();
+
 }

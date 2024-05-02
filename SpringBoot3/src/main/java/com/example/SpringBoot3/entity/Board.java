@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Data
 @NoArgsConstructor
@@ -20,5 +21,5 @@ public class Board {
     private String contents;
     private int view_count;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Date created_date;
+    private LocalDate created_date;
 }

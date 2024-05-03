@@ -15,7 +15,7 @@
     </div><!-- id="boardMenuButton" -->
     <div class="contentsTitle cf">
       <h2>게시판</h2>
-      <button class="showBalloon" title="새글 작성하기" th:onclick="|location.href='@{/board_insert}'|">글쓰기</button>
+      <button class="showBalloon" title="새글 작성하기" th:onclick="|location.href='@{/board/insert}'|">글쓰기</button>
     </div><!-- class="contentsTitle" -->
     <div id="boardSearch" class="cf">
       <div class="boardSearchTitle fl">
@@ -37,13 +37,14 @@
         <div class="headerBox04"><p>등록일</p></div>
         <div class="headerBox05"><p>조회수</p></div>
       </div>
-      <div class="boardContent cf" th:each="obj : ${list}">
-        <div class="contentBox1"><p th:text="${obj.no}"></p></div>
+      <div class="boardContent cf" th:each="obj, loop : ${list}">
+        <div class="contentBox1"><p th:text="${list.getTotalElements - (list.number * list.size) - loop.index}"></p></div>
         <div class="contentBox2"><a th:href="@{/board_detail/{no}(no=${obj.no})}"><p th:text="${obj.title}"></p></a></div>
         <div class="contentBox3"><p th:text="${obj.author}"></p></div>
         <div class="contentBox4"><p th:text="${obj.created_date}"></div>
         <div class="contentBox5"><p th:text="${obj.view_count}"></div>
       </div>
+
     </div><!-- id="boardList" -->
     <div id="boardPagination" class="cf">
       <ul>

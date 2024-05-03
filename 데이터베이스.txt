@@ -40,16 +40,16 @@ ALTER TABLE `board`
 ALTER TABLE `board`
 	ADD COLUMN `contents` TEXT NOT NULL COMMENT '글 내용' AFTER `author`;
 ALTER TABLE `board`
-	ADD COLUMN `viewCount` TINYINT(3) NOT NULL COMMENT '조회수' AFTER `contents`;
+	ADD COLUMN `view_count` TINYINT(3) NOT NULL COMMENT '조회수' AFTER `contents`;
 ALTER TABLE `board`
-	ADD COLUMN `createDate` DATE NOT NULL COMMENT '작성일자' AFTER `viewCount`;
+	ADD COLUMN `created_date` DATE NOT NULL COMMENT '작성일자' AFTER `viewCount`;
 
 
-INSERT INTO boarddb.board (title, author, contents, viewCount, createDate) VALUES('게시판 제목1','홍길동1','만나서 반갑습니다1',2,'2024-01-01');
-INSERT INTO boarddb.board (title, author, contents, viewCount, createDate) VALUES('게시판 제목2','홍길동2','만나서 반갑습니다2',4,'2024-01-01');
-INSERT INTO boarddb.board (title, author, contents, viewCount, createDate) VALUES('게시판 제목3','홍길동3','만나서 반갑습니다3',5,'2024-01-01');
-INSERT INTO boarddb.board (title, author, contents, viewCount, createDate) VALUES('게시판 제목4','홍길동4','만나서 반갑습니다4',66,'2024-01-01');
-INSERT INTO boarddb.board (title, author, contents, viewCount, createDate) VALUES('게시판 제목5','홍길동5','만나서 반갑습니다5',22,'2024-01-01');
-INSERT INTO boarddb.board (title, author, contents, viewCount, createDate) VALUES('게시판 제목6','홍길동6','만나서 반갑습니다6',89,'2024-01-01');
-INSERT INTO boarddb.board (title, author, contents, viewCount, createDate) VALUES('게시판 제목7','홍길동7','만나서 반갑습니다7',55,'2024-01-01');
+INSERT INTO boarddb.board (title, author, contents, view_count, created_date) VALUES('게시판 제목1','홍길동1','만나서 반갑습니다1',2,'2024-01-01');
+INSERT INTO boarddb.board (title, author, contents, view_count, created_date) VALUES('게시판 제목2','홍길동2','만나서 반갑습니다2',4,'2024-01-01');
+INSERT INTO boarddb.board (title, author, contents, view_count, created_date) VALUES('게시판 제목3','홍길동3','만나서 반갑습니다3',5,'2024-01-01');
+INSERT INTO boarddb.board (title, author, contents, view_count, created_date) VALUES('게시판 제목4','홍길동4','만나서 반갑습니다4',66,'2024-01-01');
+INSERT INTO boarddb.board (title, author, contents, view_count, created_date) VALUES('게시판 제목5','홍길동5','만나서 반갑습니다5',22,'2024-01-01');
+INSERT INTO boarddb.board (title, author, contents, view_count, created_date) VALUES('게시판 제목6','홍길동6','만나서 반갑습니다6',89,'2024-01-01');
+INSERT INTO boarddb.board (title, author, contents, view_count, created_date) VALUES('게시판 제목7','홍길동7','만나서 반갑습니다7',55,'2024-01-01');
 

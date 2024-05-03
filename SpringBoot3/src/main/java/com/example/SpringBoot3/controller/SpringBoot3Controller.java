@@ -3,6 +3,9 @@ package com.example.SpringBoot3.controller;
 import com.example.SpringBoot3.entity.Board;
 import com.example.SpringBoot3.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,6 +13,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 @Controller
@@ -19,15 +23,15 @@ public class SpringBoot3Controller {
     BoardService service;
 
     @GetMapping("/board")
-    public String showList(Board board, Model model){
-        Iterable<Board> list = service.selectAll();
+    public String showList(Board board, Model model, @PageableDefault(sort="no", direction= Sort.Direction.DESC) Pageable pageable ){
+        Iterable<Board> list = service.selectAll(pageable);
 
         model.addAttribute("list", list);
 
         return "board";
     }
 
-    @GetMapping("/board_insert")
+    @GetMapping("/board/insert")
     public String insert() {
 
         return "board_insert";
@@ -36,34 +40,52 @@ public class SpringBoot3Controller {
     @PostMapping("/board_save")
     public String insert_save(Board board) throws Exception {
 
+        LocalDate localDate = LocalDate.now();
+        board.setCreated_date(localDate);
+
         service.insertBoard(board);
 
         return "redirect:/board";
     }
 
-    @GetMapping("/board/{id}")
+    @GetMapping("/board_detail/{no}")
     public String detail(@PathVariable Integer no, Model model){
-        Optional<Board> boardOpt = service.selectOneByNo(no);
-        model.addAttribute("boardOpt", boardOpt);
+
+        model.addAttribute("board", service.selectOneByNo(no));
 
         return "board_detail";
     }
 
-    @PostMapping("/board/update")
-    public String update(BindingResult result, Model model, RedirectAttributes redirectAttributes) throws Exception {
-       /* Board board = new Board();
+    @GetMapping("/board_update/{no}")
+    public String updateForm(@PathVariable Integer no, Model model) {
 
-        service.updateBoard(board);
-        redirectAttributes.addFlashAttribute("complete","변경이 완료 되었습니다");
-        return "redirect:/board/" + board.getNo();*/
-        return "board";
+        model.addAttribute("board", service.selectOneByNo(no));
+
+        return "board_update";
+    }
+
+    @PostMapping("/board_updated/{no}")
+    public String update(@PathVariable Integer no, Board board) throws Exception {
+
+        Board boardt = service.selectOneByNo(no);
+
+        boardt.setTitle(board.getTitle());
+        boardt.setAuthor(board.getAuthor());
+        boardt.setContents(board.getContents());
+
+        LocalDate localDate = LocalDate.now();
+        boardt.setCreated_date(localDate);
+
+        service.updateBoard(boardt);
+
+        return "board_detail";
     }
 
 
-    @PostMapping("/board/delete")
-    public String delete(@RequestParam("no") String no, Model model, RedirectAttributes redirectAttributes) throws Exception {
+    @PostMapping("/board_delete")
+    public String delete(@RequestParam("no") String no) throws Exception {
+
         service.deleteBoardByNo(Integer.parseInt(no));
-        redirectAttributes.addFlashAttribute("delcomplete","삭제 완료했습니다.");
 
         return "redirect:/board";
     }

@@ -3,6 +3,7 @@ package com.example.SpringBoot3.service;
 import com.example.SpringBoot3.entity.Board;
 import com.example.SpringBoot3.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,17 +18,15 @@ public class BoardServiceImpl implements BoardService{
     BoardRepository repository;
 
     @Override
-    public Iterable<Board> selectAll() {
+    public Iterable<Board> selectAll(Pageable pageable) {
 
-        return repository.findAll();
+        return repository.findAll(pageable);
     }
 
     @Override
-    public Optional<Board> selectOneByNo(int no) {
+    public Board selectOneByNo(int no) {
 
-        Integer board_no =  repository.getNo();
-
-        return repository.findById(board_no);
+        return repository.findById(no).get();
     }
 
     @Override

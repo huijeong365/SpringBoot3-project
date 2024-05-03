@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{commons/layout}">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h1>글 상세</h1>
-<!--<div th:each="obj : ${boardOpt}">
-    <div><p th:text="${obj.no}"></p></div>
-    <div><p th:text="${obj.title}"></p></div>
-    <div><p th:text="${obj.author}"></p></div>
-    <div><p th:text="${obj.created_date}"></div>
-    <div><p th:text="${obj.view_count}"></div>
-</div>-->
+<div layout:fragment="content">
+    <div class="boardContents cf">
+        <div id="boardMenuButton" class="cf">
+            <span>고객지원<img src="/images/next.png" alt=">"><a href="#" tabindex="82">&nbsp;게시판 <img src="/images/trigger.png" alt="아래메뉴"></a> </span>
+        </div><!-- id="boardMenuButton" -->
+        <div class="contentsDetailTitle cf">
+            <h2>글 상세보기</h2>
+        </div><!-- class="contentsTitle" -->
+        <div id="boardDetailList" class="cf">
+            <div class="boardDetailHeader cf">
+                <div class="detailHeaderBox01"><p>No</p><p th:text="${board.no}"></p></div>
+                <div class="detailHeaderBox02"><p>제목</p><p th:text="${board.title}"></p></div>
+                <div class="detailHeaderBox03"><p>작성자</p><p th:text="${board.author}"></p></div>
+                <div class="detailHeaderBox04"><p>등록일</p><p th:text="${board.created_date}"></p></div>
+                <div class="detailHeaderBox05"><p>조회수</p><p th:text="${board.view_count}"></p></div>
+            </div>
+            <div class="boardDetailContents">
+                <div><p th:text="${board.contents}"></p></div>
+            </div>
+        </div><!-- id="boardList" -->
+        <div class="controlBtn cf">
+            <button class="detailUpdate fl" th:onclick="|location.href='@{/board_update/{no}(no=${board.no})}'|">수정</button>
+            <form method="POST" th:action="@{/board_delete}">
+                <button class="detailDelete fl" name="no" th:value="${board.no}" type="submit">삭제</button>
+            </form>
+            <button class="detailList fr" th:onclick="|location.href='@{/board}'|">목록</button>
+        </div>
+    </div><!-- class="boardContents" -->
+</div>
+
 
 
 

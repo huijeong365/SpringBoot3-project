@@ -51,7 +51,7 @@
             <td th:text="${obj.answer} == true?'O':'X'"></td>
             <td th:text="${obj.author}"></td>
             <td>
-                <form method="GET" th:action="@{/test/{id}(id=${obj.id})}">
+                <form method="GET" th:action="@{/board/{id}(id=${obj.id})}">
                     <input type="submit" value="변경">
                 </form>
             </td>

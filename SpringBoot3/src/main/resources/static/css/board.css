@@ -58,6 +58,16 @@ body{font-family: '맑은 고딕', '돋움', sans-serif;}
 #boardList .boardContent p{font-size: 16px; color: #333333;}
 #boardList .boardContent p a{color: #333333;}
 
+#boardList .boardContent{width: 100%; padding: 15px 0; border-bottom: 1px solid #d9dbe1; }
+#boardList .boardContent:hover{background-color: #f3f4f8;}
+#boardList .boardContent .contentBox1{float: left; width: 100px; text-align: center; line-height: 50px;}
+#boardList .boardContent .contentBox2{float: left; width: 910px; margin-left: 50px; line-height: 50px;}
+#boardList .boardContent .contentBox3{float: left; width: 100px; margin-left: 20px; text-align: center; line-height: 50px;}
+#boardList .boardContent .contentBox4{float: left; width: 100px; margin-left: 20px; text-align: center; line-height: 50px;}
+#boardList .boardContent .contentBox5{float: left; width: 100px; margin-left: 20px; text-align: center; line-height: 50px;}
+#boardList .boardContent p{font-size: 16px; color: #333333;}
+#boardList .boardContent p a{color: #333333;}
+
 /* 페이지 이동 */
 #boardPagination{width: 260px; margin: 0 auto;  height: 57px;}
 #boardPagination ul{margin-left: 26px;}
@@ -71,3 +81,31 @@ body{font-family: '맑은 고딕', '돋움', sans-serif;}
 #boardPagination ul li a{display: block; font-size: 0.9em; line-height: 13px; color: #a6a6a6;}
 #boardPagination ul .active a{color: #333333; }
 #boardPagination ul li a:hover{color: #00256c;}
+
+/*board_detail 페이지*/
+.contentsDetailTitle{width:100%; height: 40px; margin-bottom: 29px;}
+.contentsDetailTitle h2{font-size: 33px; color: #333333; margin-bottom: 46px;}
+
+#boardDetailList{width: 100%; margin-bottom: 70px; }
+.boardDetailHeader{width: 100%; height: 70px; border-top: 2px solid #00256c; border-bottom: 2px solid #00256c; }
+.boardDetailHeader .detailHeaderBox01{float: left; width: 100px; height: 70px; text-align: center;}
+.boardDetailHeader .detailHeaderBox02{float: left; width: 940px; margin-left: 20px; height: 70px; text-align: center;}
+.boardDetailHeader .detailHeaderBox03{float: left; width: 100px; margin-left: 20px; height: 70px; text-align: center;}
+.boardDetailHeader .detailHeaderBox04{float: left; width: 100px; margin-left: 20px; height: 70px; text-align: center;}
+.boardDetailHeader .detailHeaderBox05{float: left; width: 100px; margin-left: 20px; height: 70px; text-align: center;}
+.boardDetailHeader p{font-size: 16px; font-weight: bold; color: #333333;}
+.boardDetailHeader .detailHeaderBox01 p:nth-child(1){line-height: 30px; color:#00256C;}
+.boardDetailHeader .detailHeaderBox01 p:nth-child(2){line-height: 40px; font-weight:normal;}
+.boardDetailHeader .detailHeaderBox02 p:nth-child(1){line-height: 30px; color:#00256C;}
+.boardDetailHeader .detailHeaderBox02 p:nth-child(2){line-height: 40px; font-weight:normal;}
+.boardDetailHeader .detailHeaderBox03 p:nth-child(1){line-height: 30px; color:#00256C;}
+.boardDetailHeader .detailHeaderBox03 p:nth-child(2){line-height: 40px; font-weight:normal;}
+.boardDetailHeader .detailHeaderBox04 p:nth-child(1){line-height: 30px; color:#00256C;}
+.boardDetailHeader .detailHeaderBox04 p:nth-child(2){line-height: 40px; font-weight:normal;}
+.boardDetailHeader .detailHeaderBox05 p:nth-child(1){line-height: 30px; color:#00256C;}
+.boardDetailHeader .detailHeaderBox05 p:nth-child(2){line-height: 40px; font-weight:normal;}
+
+.boardDetailContents{width: 1320px; padding:50px; margin: 0 auto; min-height: 300px; border-bottom: 2px solid #00256c;}
+.controlBtn button{width: 75px; height: 36px; background-color: #00256c; border: 1px solid #00256c; font-size: 14px; font-weight: bold; color: #ffffff; cursor: pointer; border-radius: 6px;}
+.controlBtn button:nth-child(1){margin-right: 10px;}
+.controlBtn button:hover{background-color: #ffffff; color: #00256c;}

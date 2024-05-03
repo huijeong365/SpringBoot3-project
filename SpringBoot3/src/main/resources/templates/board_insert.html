@@ -9,33 +9,33 @@
 <body>
 
 <div layout:fragment="content">
+    <div class="boardContents cf">
+        <div id="boardMenuButton" class="cf">
+            <span>고객지원<img src="/images/next.png" alt=">"><a href="#" tabindex="82">&nbsp;게시판 <img src="/images/trigger.png" alt="아래메뉴"></a> </span>
+        </div><!-- id="boardMenuButton" -->
+        <div class="contentsDetailTitle cf">
+            <h2>새 글 쓰기</h2>
+        </div><!-- class="contentsTitle" -->
 
 
-    <h1>글쓰기</h1>
-    <h3 th:text="${title}">제목</h3>
+        <form method="post" th:action="@{/board_save}">
+            <div>
+                <label for="author">작성자</label>
+                <input type="text" name="author" id="author">
+            </div>
+            <div>
+                <label for="title">제목</label>
+                <textarea rows="1" cols="50" name="title" id="title"></textarea>
+            </div>
+            <div>
+                <label for="contents">내용</label>
+                <textarea rows="5" cols="50" name="contents" id="contents"></textarea>
+            </div>
+            <input th:if="${no}" type="hidden" >
+            <input type="submit" value="저장">
+        </form>
 
-    <form method="post" th:action="@{/board_save}">
-        <div>
-            <label for="author">작성자</label>
-            <input type="text" name="author" id="author">
-        </div>
-        <div>
-            <label for="title">제목</label>
-            <textarea rows="1" cols="50" name="title" id="title"></textarea>
-        </div>
-        <div>
-            <label for="contents">내용</label>
-            <textarea rows="5" cols="50" name="contents" id="contents"></textarea>
-        </div>
-        <div>
-            <label for="created_date">날짜</label>
-            <input type="date" name="created_date" id="created_date">
-        </div>
-        <input th:if="${no}" type="hidden" th:field="*{no}" >
-
-        <input type="submit" value="저장">
-
-    </form>
+    </div><!-- class="boardContents" -->
 </div>
 
 </body>

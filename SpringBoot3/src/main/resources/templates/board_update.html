@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns="http://www.w3.org/1999/html"
       layout:decorate="~{commons/layout}">
 <head>
     <meta charset="UTF-8">
@@ -20,12 +20,12 @@
                 <div class="boardDetailHeader cf">
                     <div class="detailHeaderBox01"><p>No</p><p th:text="${board.no}"></p></div>
                     <div class="detailHeaderBox02"><p>제목</p><textarea rows="1" cols="50" th:field="${board.title}"></textarea></div>
-                    <div class="detailHeaderBox03"><p>작성자</p><input type="text" th:field="${board.author}"/></div>
+                    <div class="detailHeaderBox03"><p>작성자</p><p type="text" th:text="${board.author}"></p></div>
                     <div class="detailHeaderBox04"><p>등록일</p><p th:text="${board.created_date}"></p></div>
                     <div class="detailHeaderBox05"><p>조회수</p><p th:text="${board.view_count}"></p></div>
                 </div>
                 <div class="boardDetailContents">
-                    <div><textarea rows="5" cols="50" th:field="${board.contents}"></textarea></div>
+                    <div><textarea rows="5" cols="50" th:field="${board.content}"></textarea></div>
                 </div>
             </div><!-- id="boardList" -->
             <div class="controlBtn cf">

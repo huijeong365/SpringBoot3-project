@@ -26,6 +26,7 @@ public class SpringBoot3Controller {
     public String showList(Board board, Model model, @PageableDefault(sort="no", direction= Sort.Direction.DESC) Pageable pageable ){
         Iterable<Board> list = service.selectAll(pageable);
 
+
         model.addAttribute("list", list);
 
         return "board";
@@ -49,34 +50,37 @@ public class SpringBoot3Controller {
     }
 
     @GetMapping("/board_detail/{no}")
-    public String detail(@PathVariable Integer no, Model model){
-
-        model.addAttribute("board", service.selectOneByNo(no));
+    public String detail(@PathVariable Integer no, Model model) throws Exception{
+        Board board = service.selectOneByNo(no);
+        board.updateViewCount(board.getView_count());
+        service.updateBoard(board);
+        model.addAttribute("board", board);
 
         return "board_detail";
     }
 
     @GetMapping("/board_update/{no}")
     public String updateForm(@PathVariable Integer no, Model model) {
+        Board board = service.selectOneByNo(no);
 
-        model.addAttribute("board", service.selectOneByNo(no));
+        model.addAttribute("board", board);
 
         return "board_update";
     }
 
     @PostMapping("/board_updated/{no}")
-    public String update(@PathVariable Integer no, Board board) throws Exception {
+    public String update(@PathVariable Integer no, Model model, Board board) throws Exception {
 
-        Board boardt = service.selectOneByNo(no);
+        Board board1 = service.selectOneByNo(no);
 
-        boardt.setTitle(board.getTitle());
-        boardt.setAuthor(board.getAuthor());
-        boardt.setContents(board.getContents());
-
+        board1.setTitle(board.getTitle());
+        board1.setContent(board.getContent());
         LocalDate localDate = LocalDate.now();
-        boardt.setCreated_date(localDate);
+        board1.setCreated_date(localDate);
 
-        service.updateBoard(boardt);
+        service.updateBoard(board1);
+
+        model.addAttribute("board", board1);
 
         return "board_detail";
     }

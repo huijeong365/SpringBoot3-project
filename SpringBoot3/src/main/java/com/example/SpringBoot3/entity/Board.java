@@ -19,8 +19,13 @@ public class Board {
     private Integer no;
     private String title;
     private String author;
-    private String contents;
+    private String content;
     private int view_count;
+
+    public Board updateViewCount(Integer view_count){
+        this.view_count = view_count+1;
+        return this;
+    }
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate created_date;
 }

@@ -26,7 +26,9 @@ public class BoardServiceImpl implements BoardService{
     @Override
     public Board selectOneByNo(int no) {
 
-        return repository.findById(no).get();
+        Board board = repository.findById(no).get();
+
+        return board;
     }
 
     @Override

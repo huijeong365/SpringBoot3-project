@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="Notepad++">
+  <meta name="Author" content="Travel Maker">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale-1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="description" content="나만의 여행 일정을 만들어 보세요.">
+  <title>Travel Maker</title>
+
+  <!-- CSS only -->
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="css/swiper.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/swiper.js"></script>
+  <script src="js/list.js"></script>
+  <!-- 맵 관련 스크립트 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="js/map.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8qApSC1zUZ3N5TJXqIotkH0fncaD2W9A&callback=initMap&v=weekly&solution_channel=GMP_CCS_geocodingservice_v1" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8qApSC1zUZ3N5TJXqIotkH0fncaD2W9A&callback=initMap&v=weekly&solution_channel=GMP_CCS_geolocation_v1" defer></script>
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyA3_SR598S--ec9D2oXt4AJnXI3pKm0hco&v=3.3&sensor=true"></script>
+  <!-- 캘린더 관련 스크립트 -->
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="js/moment-2.2.1.js"></script>
+  <script src="js/jhclndr.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/jquery-multiple-select.js"></script>
+  <script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36251023-1']);
+		_gaq.push(['_setDomainName', 'jqueryscript.net']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+  </script>
+
+</head>
+<body>
+
+<div layout:fragment="content">
+
+</div>
+
+</body>
+<script>
+	// Define Class name where you want to select list , its must be ul and li
+	$('.jquery-multiple-select li').JqueryMultipleSelect({
+		ResultBackgroundColor:'#ffffff',
+		ResultClass:'custom-result-section', // Where you want to show result
+		AddExtraClassinResult:'custom-result-list', // Add Class in Result Div
+		AddExtraClassinSelectList:'custom-select-list',// All Class on div that contain select li
+		AddClassOnDeleteIcon:'custom-delete-icon', // Class on Result File cancel button
+
+		});
+	</script>
+</html>

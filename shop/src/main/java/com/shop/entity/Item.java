@@ -4,11 +4,10 @@ import com.shop.constant.ItemSellStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDateTime;
 @Entity
 @Table(name = "item")
 @Data
-public class Item {
+public class Item extends BaseEntity{
 
     @Id
     @Column(name = "item_id")
@@ -30,7 +29,4 @@ public class Item {
 
     @Enumerated(EnumType.STRING)
     private ItemSellStatus itemSellStatus; //상품 판매 상태
-    private LocalDateTime regTime; //등록시간
-    private LocalDateTime updateTime; //수정시간
-
 }

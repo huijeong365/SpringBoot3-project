@@ -1,7 +1,7 @@
-package com.shop.entity;
+package com.example.SpringBoot3.entity;
 
-import com.shop.constant.Role;
-import com.shop.dto.MemberFormDto;
+import com.example.SpringBoot3.constant.Role;
+import com.example.SpringBoot3.dto.MemberFormDto;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -9,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Entity
 @Table(name = "member")
 @Data
-public class Member extends BaseEntity {
+public class Member {
     @Id
     @Column(name="member_id")
     @GeneratedValue(strategy = GenerationType.AUTO)

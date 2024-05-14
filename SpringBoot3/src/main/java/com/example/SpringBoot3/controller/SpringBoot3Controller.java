@@ -2,6 +2,7 @@ package com.example.SpringBoot3.controller;
 
 import com.example.SpringBoot3.entity.Board;
 import com.example.SpringBoot3.service.BoardService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -17,6 +18,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 @Controller
+@RequiredArgsConstructor
 public class SpringBoot3Controller {
 
    @Autowired
@@ -106,9 +108,5 @@ public class SpringBoot3Controller {
 
         return "qna";
     }
-    @GetMapping("login")
-    public String showViewD(){
 
-        return "login";
-    }
 }

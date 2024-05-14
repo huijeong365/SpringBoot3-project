@@ -17,12 +17,6 @@ body{font-family: '맑은 고딕', '돋움', sans-serif;}
             .loginTitle{margin-bottom: 35px;}
             .loginTitle h2{font-size: 34px; color: #333333;}
 
-            #selection{margin-bottom: 30px; height: 40px; }     
-            #selection input#user{width: 20px; height: 20px; vertical-align: middle;}           
-            #selection label.user{font-size: 16px; padding-left: 7px; margin-right: 142px; color: #333333;}    
-            #selection input#skypass{width: 20px; height: 20px; vertical-align: middle;}           
-            #selection label.skypass{font-size: 16px; padding-left: 7px; color: #333333;} 
-
             #id{margin-bottom: 51px; border-bottom: 1px solid #00256c;}
             #id p{color: #333333; font-size: 14px; margin-bottom: 15px;}
             #id input{width: 100%; height: 50px; background: none; border: none; font-size: 16px; }

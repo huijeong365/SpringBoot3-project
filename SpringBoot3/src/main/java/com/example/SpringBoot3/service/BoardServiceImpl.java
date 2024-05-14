@@ -14,7 +14,7 @@ import java.util.Optional;
 @Transactional
 public class BoardServiceImpl implements BoardService{
 
-    @Autowired
+    @Autowired(required = false)
     BoardRepository repository;
 
     @Override

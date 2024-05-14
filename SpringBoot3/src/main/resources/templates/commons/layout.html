@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/css/qna.css">
   <link rel="stylesheet" href="/css/login.css">
   <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/join.css">
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="/js/jquery-ui-1.10.4.custom.min.js"></script> <!-- UI 플러그인 연동 -->
   <script src="/js/jquery.cookie.js"></script>   <!-- 쿠키 플러그인 연동 -->
@@ -41,7 +42,7 @@
           <li class="showBalloon" title="이벤트"><a href="board" tabindex="1"><img src="/images/event.png" alt="이벤트">이벤트</a></li>
           <li class="showBalloon" title="자주묻는 질문"><a href="qna" tabindex="2"><img src="/images/customer.png" alt="자주묻는 질문">자주묻는 질문</a></li>
           <li class="showBalloon" title="언어"><a href="#" tabindex="3"><img src="/images/korea.png" alt="한국어">대한민국 - 한국어</a></li>
-          <li class="showBalloon" title="회원가입"><a href="#" tabindex="4"><img src="/images/join.png" alt="회원가입">회원가입</a></li>
+          <li class="showBalloon" title="회원가입"><a href="#" tabindex="4" th:onclick="|location.href='@{/member/join}'|"><img src="/images/join.png" alt="회원가입">회원가입</a></li>
         </ul>
       </div><!-- class="mainGnb" -->
     </div><!-- class="gnbWrap" -->
@@ -54,7 +55,7 @@
         </div><!-- id="mainLogo" -->
         <div id="mainLogin">
           <div class="loginButtonWrap">
-            <button id="loginButton" class="showBalloon" title="로그인" type="button" onclick="location.href='/login'"><span>로그인</span></button>
+            <button id="loginButton" class="showBalloon" title="로그인" type="button" onclick="location.href='/member/login'"><span>로그인</span></button>
           </div>
         </div><!-- id="mainLogin" -->
         <div id="mainSearch" class="cf">

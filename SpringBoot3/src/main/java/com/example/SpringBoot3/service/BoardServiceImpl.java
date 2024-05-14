@@ -2,16 +2,16 @@ package com.example.SpringBoot3.service;
 
 import com.example.SpringBoot3.entity.Board;
 import com.example.SpringBoot3.repository.BoardRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
-import java.util.Optional;
-
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService{
 
     @Autowired(required = false)

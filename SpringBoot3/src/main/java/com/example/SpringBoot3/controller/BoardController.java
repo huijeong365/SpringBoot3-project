@@ -9,17 +9,13 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
-import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
-public class SpringBoot3Controller {
+public class BoardController {
 
    @Autowired
     BoardService service;
@@ -96,17 +92,16 @@ public class SpringBoot3Controller {
         return "redirect:/board";
     }
 
-
-
-    @GetMapping("index")
+    @GetMapping("/index")
     public String showViewA(){
 
         return "index";
     }
-    @GetMapping("qna")
+    @GetMapping("/qna")
     public String showViewC(){
 
         return "qna";
     }
+
 
 }

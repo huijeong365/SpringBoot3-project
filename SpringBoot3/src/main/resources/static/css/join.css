@@ -17,14 +17,12 @@ body{font-family: '맑은 고딕', '돋움', sans-serif;}
             .joinTitle{margin-bottom: 35px;}
             .joinTitle h2{font-size: 34px; color: #333333;}
 
-            #id{margin-bottom: 51px; border-bottom: 1px solid #00256c;}
-            #id p{color: #333333; font-size: 14px; margin-bottom: 15px;}
-            #id input{width: 100%; height: 50px; background: none; border: none; font-size: 16px; }
-
-            #passWord{margin-bottom: 49px; border-bottom: 1px solid #00256c;}
-            #passWord p{color: #333333; font-size: 14px; margin-bottom: 15px;}
-            #passWord input{width: 100%; height: 50px; background: none; border: none; font-size: 16px;}
+            form>div{margin-bottom: 51px; }
+            form>div label{color: #333333; font-size: 14px; margin-bottom: 15px;}
+            form>div input{width: 100%; height: 50px; background: none; border: none; font-size: 16px; border-bottom: 1px solid #00256c; }
 
             #submit{margin-bottom: 24px;}
             #submit button{ height: 69px; width: 100%; border: none; border-radius: 14px; background-color: #00256c; color: #ffffff; font-size: 18px; font-weight: bold; cursor: pointer;}
         
+.fieldError{ color: #bd2130; }
+.error{ color: #bd2130; }

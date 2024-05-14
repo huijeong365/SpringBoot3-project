@@ -5,26 +5,41 @@ $(function(){
     $('.guideText').each(function(){
         var guideText = this.defaultValue;
         var element = $(this);
-        var id = $('#userId');
+        var name = $('#name');
         var pwd = $('#userPassword');
-        pwd.focus(function(){
-            if(pwd.val()===guideText){
-                pwd.val('');
-                pwd.removeClass(guideClass);
+        var email = $('#email');
+        var password = $('#password');
+        var address = $('#address');
+        password.focus(function(){
+            if(password.val()===guideText){
+                password.val('');
+                password.removeClass(guideClass);
             }
-            pwd.attr('type','password');
+            password.attr('type','password');
         });
-        id.focus(function(){
-            if(id.val()===guideText){
-                id.val('');
-                id.removeClass(guideClass);
+        name.focus(function(){
+            if(name.val()===guideText){
+                name.val('');
+                name.removeClass(guideClass);
+            }
+        });
+        email.focus(function(){
+            if(email.val()===guideText){
+                email.val('');
+                email.removeClass(guideClass);
+            }
+        });
+        address.focus(function(){
+            if(address.val()===guideText){
+                address.val('');
+                address.removeClass(guideClass);
             }
         });
         element.blur(function(){
             if(element.val()===''){ 
                 element.val(guideText);
                 element.addClass(guideClass);
-                pwd.attr('type','text');
+                password.attr('type','text');
             }
         });
         if(element.val()===guideText){ 

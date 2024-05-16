@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService{
 
-    @Autowired(required = false)
+    @Autowired
     BoardRepository repository;
 
     @Override

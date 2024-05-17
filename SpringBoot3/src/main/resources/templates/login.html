@@ -13,12 +13,12 @@
         <form role="form" method="post" action="/login">
           <div id="email">
             <label th:for="email">이메일주소</label>
-            <input type="email" name="email" class="form-control guideText showBalloon" title="이메일을 입력해 주세요" placeholder="이메일을 입력해 주세요">
+            <input type="email" name="email" class="form-control guideText showBalloon" id="id" title="이메일을 입력해 주세요" value="이메일을 입력해 주세요">
           </div><!-- id="email" -->
-          <div id="pwd">
+          <div id="password">
             <label th:for="password">비밀번호</label>
-            <input type="password" name="password" id="password" class="form-control guideText showBalloon" title="비밀번호를 입력해 주세요" placeholder="비밀번호를 입력해 주세요">
-          </div><!-- id="pwd" -->
+            <input type="text" name="password" id="pwd" class="form-control guideText showBalloon" title="비밀번호를 입력해 주세요" value="비밀번호를 입력해 주세요">
+          </div><!-- id="password" -->
           <p th:if="${loginErrorMsg}" class="error" th:text="${loginErrorMsg}"></p>
           <div id="submit">
             <button class="btn btn-primary">로그인</button>

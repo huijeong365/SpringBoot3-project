@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       layout:decorate="~{commons/layout}">
 <head>
     <meta charset="UTF-8">
@@ -28,9 +29,9 @@
             </div>
         </div><!-- id="boardList" -->
         <div class="controlBtn cf">
-            <button class="detailUpdate fl" th:onclick="|location.href='@{/board_update/{no}(no=${board.no})}'|">수정</button>
-            <form method="POST" th:action="@{/board_delete}">
-                <button class="detailDelete fl" name="no" th:value="${board.no}" type="submit">삭제</button>
+            <button class="detailUpdate fl" sec:authorize="isAuthenticated()" th:onclick="|location.href='@{/board_update/{no}(no=${board.no})}'|">수정</button>
+            <form method="get" th:action="@{/board_delete}">
+                <button class="detailDelete fl" name="no" sec:authorize="isAuthenticated()" th:value="${board.no}" type="submit">삭제</button>
             </form>
             <button class="detailList fr" th:onclick="|location.href='@{/board}'|">목록</button>
         </div>

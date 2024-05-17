@@ -33,7 +33,7 @@ h1{display: none;}
             #mainLogin{width: 75px; float: right; height: 29px; padding-left: 10px; padding-top: 21px;}
             #mainLogin .loginButtonWrap{width: 77px; height:29px; border-radius: 25px; border:0; padding-top: 2px; padding-left: 2px;  }
             #mainLogin .loginButtonWrap:hover{border:1px solid  #0064de; margin: -1px;}
-            #mainLogin .loginButtonWrap #loginButton{width: 75px; height:27px; border-radius: 25px; border:0; background-color: #00256c; cursor: pointer; color: #ffffff; font-weight: bold;}
+            #mainLogin .loginButtonWrap Button{width: 75px; height:27px; border-radius: 25px; border:0; background-color: #00256c; cursor: pointer; color: #ffffff; font-weight: bold;}
                 
             #mainSearch{width: 240px; float: right; height: 38px; padding-top: 16px;}
             #mainSearch .searchButtonWrap{width: 240px; height: 38px; border-radius: 25px; border:0; padding-top: 2px; padding-left: 2px; }

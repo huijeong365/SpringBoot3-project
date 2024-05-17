@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -37,7 +38,7 @@ public class BoardController {
     }
 
     @GetMapping("/board_save")
-    public String insert_save(Board board) throws Exception {
+    public String insert_save(Board board, BindingResult bindingResult) throws Exception {
 
         LocalDate localDate = LocalDate.now();
         board.setCreated_date(localDate);
@@ -45,6 +46,14 @@ public class BoardController {
         service.insertBoard(board);
 
         return "redirect:/board";
+
+       /* if (!bindingResult.hasErrors()) {
+            service.insertBoard(board);
+            return "/board";
+        }else {
+            return "redirect:/board_insert";
+        }*/
+
     }
 
     @GetMapping("/board_detail/{no}")

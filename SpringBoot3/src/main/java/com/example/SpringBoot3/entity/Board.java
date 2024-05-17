@@ -2,6 +2,7 @@ package com.example.SpringBoot3.entity;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,8 +22,11 @@ public class Board {
     @Column(name="no")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer no;
+    @NotBlank
     private String title;
+    @NotBlank
     private String author;
+    @NotBlank
     private String content;
     private int view_count;
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="UTF-8">
   <meta name="Generator" content="Notepad++">
@@ -30,7 +31,15 @@
   <script src="/js/script.js"></script>
   <script src="/js/script-login.js"></script>
   <script src="/js/script-qna.js"></script>
-
+  <script type="application/javascript" th:inline="javascript" th:fragment="ajax-csrf-header">
+      $(function () {
+          var csrfToken = /*[[${_csrf.token}]]*/ '';
+          var csrfHeader = /*[[${_csrf.headerName}]]*/ '';
+          $(document).ajaxSend(function (e, xhr, options) {
+              xhr.setRequestHeader(csrfHeader, csrfToken);
+          });
+      });
+  </script>
 </head>
 <body>
 <!--공통 머리글-->
@@ -42,7 +51,7 @@
           <li class="showBalloon" title="이벤트"><a href="board" tabindex="1"><img src="/images/event.png" alt="이벤트">이벤트</a></li>
           <li class="showBalloon" title="자주묻는 질문"><a href="qna" tabindex="2"><img src="/images/customer.png" alt="자주묻는 질문">자주묻는 질문</a></li>
           <li class="showBalloon" title="언어"><a href="#" tabindex="3"><img src="/images/korea.png" alt="한국어">대한민국 - 한국어</a></li>
-          <li class="showBalloon" title="회원가입"><a href="#" tabindex="4" th:onclick="|location.href='@{/join}'|"><img src="/images/join.png" alt="회원가입">회원가입</a></li>
+          <li class="showBalloon" title="회원가입" sec:authorize="isAnonymous()"><a href="#" tabindex="4" th:onclick="|location.href='@{/join}'|"><img src="/images/join.png" alt="회원가입">회원가입</a></li>
         </ul>
       </div><!-- class="mainGnb" -->
     </div><!-- class="gnbWrap" -->
@@ -55,7 +64,8 @@
         </div><!-- id="mainLogo" -->
         <div id="mainLogin">
           <div class="loginButtonWrap">
-            <button id="loginButton" class="showBalloon" title="로그인" type="button" onclick="location.href='/login'"><span>로그인</span></button>
+            <button class="showBalloon" title="로그인" type="button" sec:authorize="isAnonymous()" onclick="location.href='/login'"><span>로그인</span></button>
+            <button class="showBalloon" title="로그인" type="button" sec:authorize="isAuthenticated()" onclick="location.href='/logout'"><span>로그아웃</span></button>
           </div>
         </div><!-- id="mainLogin" -->
         <div id="mainSearch" class="cf">

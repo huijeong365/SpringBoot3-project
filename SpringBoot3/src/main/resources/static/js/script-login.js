@@ -2,49 +2,34 @@ $(function(){
     /* 로그인 guideText */
     //'guide' = css(.guide)
     var guideClass = 'guide';
-    $('.guideText').each(function(){
+    $('#login .guideText').each(function(){
         var guideText = this.defaultValue;
         var element = $(this);
-        var name = $('#name');
-        var pwd = $('#userPassword');
-        var email = $('#email');
-        var password = $('#password');
-        var address = $('#address');
-        password.focus(function(){
-            if(password.val()===guideText){
-                password.val('');
-                password.removeClass(guideClass);
+        var id = $('#login #id');
+        var pwd = $('#login #pwd');
+        pwd.focus(function(){
+            if(pwd.val()===guideText){
+                pwd.val('');
+                pwd.removeClass(guideClass);
             }
-            password.attr('type','password');
+            pwd.attr('type','password');
         });
-        name.focus(function(){
-            if(name.val()===guideText){
-                name.val('');
-                name.removeClass(guideClass);
-            }
-        });
-        email.focus(function(){
-            if(email.val()===guideText){
-                email.val('');
-                email.removeClass(guideClass);
-            }
-        });
-        address.focus(function(){
-            if(address.val()===guideText){
-                address.val('');
-                address.removeClass(guideClass);
+        id.focus(function(){
+            if(id.val()===guideText){
+                id.val('');
+                id.removeClass(guideClass);
             }
         });
         element.blur(function(){
-            if(element.val()===''){ 
+            if(element.val()===''){
                 element.val(guideText);
                 element.addClass(guideClass);
-                password.attr('type','text');
+                pwd.attr('type','text');
             }
         });
-        if(element.val()===guideText){ 
+        if(element.val()===guideText){
             element.addClass(guideClass);
-        }		
+        }
     });
 
    

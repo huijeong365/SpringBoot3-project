@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       layout:decorate="~{commons/layout}">
 <head>
     <meta charset="UTF-8">
@@ -13,11 +14,12 @@
         <div id="quick_menu">
             <h3><a href="#">Quick menu</a></h3>
             <ul>
-                <li><a href="#">로그인</a></li>
-                <li><a href="#">항공권 예매</a></li>
-                <li><a href="#">고객 게시판</a></li>
-                <li><a href="#">QnA 게시판</a></li>
-                <li><a href="#">공항 서비스</a></li>
+                <li sec:authorize="isAnonymous()"><a href="/login">로그인</a></li>
+                <li sec:authorize="isAuthenticated()"><a href="/logout">로그아웃</a></li>
+                <li><a href="/qna">항공권 예매</a></li>
+                <li><a href="/board">고객 게시판</a></li>
+                <li><a href="/qna">QnA 게시판</a></li>
+                <li><a href="/board">공항 서비스</a></li>
                 <li class="last">
                     <a href="#top" class="fl quick_btn"><img src="images/quick_up.png" alt="위로" /></a>
                     <a href="#footer_wrap" class="fl quick_btn"><img src="images/quick_down.png" alt="아래로" /></a>

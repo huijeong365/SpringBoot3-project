@@ -14,8 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService{
 
-    @Autowired
-    BoardRepository repository;
+    private final BoardRepository repository;
 
     @Override
     public Iterable<Board> selectAll(Pageable pageable) {

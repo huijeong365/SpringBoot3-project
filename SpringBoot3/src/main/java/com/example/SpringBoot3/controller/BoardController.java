@@ -36,7 +36,7 @@ public class BoardController {
         return "board_insert";
     }
 
-    @PostMapping("/board_save")
+    @GetMapping("/board_save")
     public String insert_save(Board board) throws Exception {
 
         LocalDate localDate = LocalDate.now();
@@ -66,7 +66,7 @@ public class BoardController {
         return "board_update";
     }
 
-    @PostMapping("/board_updated/{no}")
+    @GetMapping("/board_updated/{no}")
     public String update(@PathVariable Integer no, Model model, Board board) throws Exception {
 
         Board board1 = service.selectOneByNo(no);

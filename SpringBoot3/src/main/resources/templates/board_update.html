@@ -15,7 +15,7 @@
         <div class="contentsDetailTitle cf">
             <h2>글 수정하기</h2>
         </div><!-- class="contentsTitle" -->
-        <form method="post" th:action="@{/board_updated/{no}(no=${board.no})}">
+        <form method="get" th:action="@{/board_updated/{no}(no=${board.no})}">
             <div id="boardDetailList" class="cf">
                 <div class="boardDetailHeader cf">
                     <div class="detailHeaderBox01"><p>No</p><p th:text="${board.no}"></p></div>

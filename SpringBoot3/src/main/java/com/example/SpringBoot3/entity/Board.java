@@ -1,21 +1,25 @@
 package com.example.SpringBoot3.entity;
 
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
+@Entity
+@Table(name = "board")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Board {
     @Id
+    @Column(name="no")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer no;
     private String title;
     private String author;

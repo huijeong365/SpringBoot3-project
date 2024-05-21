@@ -30,9 +30,7 @@
         </div><!-- id="boardList" -->
         <div class="controlBtn cf">
             <button class="detailUpdate fl" sec:authorize="isAuthenticated()" th:onclick="|location.href='@{/board_update/{no}(no=${board.no})}'|">수정</button>
-            <form method="get" th:action="@{/board_delete}">
-                <button class="detailDelete fl" name="no" sec:authorize="isAuthenticated()" th:value="${board.no}" type="submit">삭제</button>
-            </form>
+            <button class="detailDelete fl" name="no" sec:authorize="isAuthenticated()" th:onclick="|location.href='@{/board_delete(no=${board.no})}'|">삭제</button>
             <button class="detailList fr" th:onclick="|location.href='@{/board}'|">목록</button>
         </div>
     </div><!-- class="boardContents" -->

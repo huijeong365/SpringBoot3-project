@@ -4,6 +4,7 @@ import com.example.SpringBoot3.entity.Board;
 import com.example.SpringBoot3.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -22,9 +23,17 @@ public class BoardController {
     BoardService service;
 
     @GetMapping("/board")
-    public String showList(Board board, Model model, @PageableDefault(sort="no", direction= Sort.Direction.DESC) Pageable pageable ){
-        Iterable<Board> list = service.selectAll(pageable);
+    public String showList(Board board, Model model, @PageableDefault(sort="no", direction= Sort.Direction.DESC) Pageable pageable, String searchKeyword ){
 
+        Page<Board> list = null;
+
+        if (searchKeyword == null) {
+            // 검색 단어가 없으면 기존 화면을 보여준다.
+            list = service.selectAll(pageable);
+        } else {
+            // 검색 단어가 들어오면 검색 단어에 맞게 나온다. 쿼리스트링으로 들어가는 키워드를 찾아냄
+            list = service.boardSearchList(searchKeyword, pageable);
+        }
 
         model.addAttribute("list", list);
 
@@ -38,26 +47,27 @@ public class BoardController {
     }
 
     @GetMapping("/board_save")
-    public String insert_save(Board board, BindingResult bindingResult) throws Exception {
+    public String insert_save(Board board, BindingResult bindingResult, Model model){
 
         LocalDate localDate = LocalDate.now();
         board.setCreated_date(localDate);
 
-        service.insertBoard(board);
+ /*       service.insertBoard(board);
 
-        return "redirect:/board";
+        return "redirect:/board";*/
 
-       /* if (!bindingResult.hasErrors()) {
+        if (!bindingResult.hasErrors()) {
             service.insertBoard(board);
-            return "/board";
+            return "redirect:/board";
         }else {
-            return "redirect:/board_insert";
-        }*/
+            model.addAttribute("msg", "글 작성을 완료해 주세요");
+            return "/board_insert";
+        }
 
     }
 
     @GetMapping("/board_detail/{no}")
-    public String detail(@PathVariable Integer no, Model model) throws Exception{
+    public String detail(@PathVariable Integer no, Model model){
         Board board = service.selectOneByNo(no);
         board.updateViewCount(board.getView_count());
         service.updateBoard(board);
@@ -76,7 +86,7 @@ public class BoardController {
     }
 
     @GetMapping("/board_updated/{no}")
-    public String update(@PathVariable Integer no, Model model, Board board) throws Exception {
+    public String update(@PathVariable Integer no, Model model, Board board){
 
         Board board1 = service.selectOneByNo(no);
 
@@ -93,8 +103,8 @@ public class BoardController {
     }
 
 
-    @PostMapping("/board_delete")
-    public String delete(@RequestParam("no") String no) throws Exception {
+    @GetMapping("/board_delete")
+    public String delete(@RequestParam("no") String no){
 
         service.deleteBoardByNo(Integer.parseInt(no));
 

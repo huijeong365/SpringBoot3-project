@@ -70,17 +70,16 @@ body{font-family: '맑은 고딕', '돋움', sans-serif;}
 
 /* 페이지 이동 */
 #boardPagination{width: 260px; margin: 0 auto;  height: 57px;}
-#boardPagination ul{margin-left: 26px;}
-#boardPagination ul li{float: left;padding: 0px 6px; border-right: 1px solid #c1c1c1;}
-#boardPagination ul .pageFirst{padding-right: 2px; border-right: none;}
-#boardPagination ul .pagePrev{padding-left: 2px; padding-right: 5px; border-right: none;}
-#boardPagination ul .pageNext{padding-left: 5px; padding-right: 2px; border-right: none;}
-#boardPagination ul .pageLast{padding-left: 2px; border-right: none;}
-#boardPagination ul .bdr{border-right: none;}
-#boardPagination ul li img{vertical-align: middle; height: 12px; box-sizing: border-box;}
-#boardPagination ul li a{display: block; font-size: 0.9em; line-height: 13px; color: #a6a6a6;}
-#boardPagination ul .active a{color: #333333; }
-#boardPagination ul li a:hover{color: #00256c;}
+#boardPagination .board_page_num .hidden{display: hidden;}
+#boardPagination .board_page_num .pageFirst{border-right: none; padding: 10px 5px; line-height: 13px; display: block; }
+#boardPagination .board_page_num .pagePrev{border-right: none; padding: 10px; line-height: 13px; display: block; }
+#boardPagination .board_page_num .pageNext{border-right: none; padding: 10px; line-height: 13px; display: block; }
+#boardPagination .board_page_num .pageLast{border-right: none; padding: 10px 5px; line-height: 13px; display: block; }
+#boardPagination .board_page_num img{vertical-align: middle; height: 12px; box-sizing: border-box;}
+#boardPagination .board_page_num .num a {display: block; font-size: 16px; line-height: 16px; color: #a6a6a6; padding: 10px;}
+#boardPagination .board_page_num .active a{color: red; }
+#boardPagination .board_page_num a:hover{color: #00256c;}
+
 
 /*board_detail 페이지*/
 .contentsDetailTitle{width:100%; height: 40px; margin-bottom: 29px;}
@@ -114,8 +113,8 @@ body{font-family: '맑은 고딕', '돋움', sans-serif;}
 
 /*board_insert 페이지*/
 .boardInsertHeader{width: 100%; height: 70px; border-top: 2px solid #00256c; border-bottom: 2px solid #00256c; }
-.boardInsertHeader .insertHeaderBox01{float: left; width: 940px; height: 70px; text-align: center; line-height:85px;}
-.boardInsertHeader .insertHeaderBox01 textarea{width: 630px; height: 30px; line-height:30px; resize: none;}
+.boardInsertHeader .insertHeaderBox01{float: left; width: 940px; height: 70px; text-align: center; line-height:70px;}
+.boardInsertHeader .insertHeaderBox01 input{width: 630px; height: 30px; line-height:30px; resize: none;}
 .boardInsertHeader .insertHeaderBox02{float: left; width: 300px; margin-left: 20px; height: 70px; white-space:nowrap; line-height:70px;}
 .boardInsertHeader .insertHeaderBox02 input{width: 150px; height: 30px; line-height:30px; resize: none;}
 

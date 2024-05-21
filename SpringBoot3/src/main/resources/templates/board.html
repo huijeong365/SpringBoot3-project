@@ -22,13 +22,18 @@
       <div class="boardSearchTitle fl">
         <h3>게시판 검색</h3>
       </div>
+      <form th:action="@{/board}" method="get">
       <div class="boardSearchCont fl">
         <p>키워드 검색</p>
-        <input type="text" id="search">
+
+          <input type="text" id="search" name="searchKeyword">
+
+
       </div>
       <div class="boardSearchBtn fl">
-        <button class="showBalloon" title="검색하기">검색</button>
+        <button type="submit" class="showBalloon" title="검색하기">검색</button>
       </div>
+      </form>
     </div><!-- id="boardSearch" -->
     <div id="boardList" class="cf">
       <div class="boardHeader cf">
@@ -45,13 +50,15 @@
         <div class="contentBox4"><p th:text="${obj.created_date}"></div>
         <div class="contentBox5"><p th:text="${obj.view_count}"></div>
       </div>
-
     </div><!-- id="boardList" -->
+
     <div id="boardPagination" class="cf">
       <div th:if="${!list.isEmpty()}" class="board_page_num cf">
-        <div class="page_arrow prev fl" th:classappend="${!list.hasPrevious} ? 'none'">
-          <!--<button th:onclick="|location.href='@{?page=${list.number-1}}'|">이전</button>-->
-          <a th:href="@{|?page=${list.number-1}|}">이전</a>
+        <div class="page_arrow pageFirst prev fl" th:classappend="${!list.hasPrevious} ? 'hidden'">
+          <a th:href="@{|?page=${list.number-5}|}"><img src="images/first.png"></a>
+        </div>
+        <div class="page_arrow pagePrev prev fl" th:classappend="${!list.hasPrevious} ? 'hidden'">
+          <a th:href="@{|?page=${list.number-1}|}"><img src="images/prev.png"></a>
         </div>
         <div th:each="page: ${#numbers.sequence(0, list.totalPages-1)}"
              th:if="${page >= list.number-5 and page <= list.number+5}"
@@ -59,21 +66,13 @@
              class="num fl">
           <a th:text="${page+1}" class="page-link" th:href="@{|?page=${page}|}"></a>
         </div>
-        <div class="page_arrow next fl" th:classappend="${!list.hasNext} ? 'none'">
-          <a th:href="@{|?page=${list.number+1}|}">다음</a>
+        <div class="page_arrow pageNext next fl" th:classappend="${!list.hasNext} ? 'hidden'">
+          <a th:href="@{|?page=${list.number+1}|}"><img src="images/next.png"></a>
+        </div>
+        <div class="page_arrow pageLast next fl" th:classappend="${!list.hasNext} ? 'hidden'">
+          <a th:href="@{|?page=${list.number+5}|}"><img src="images/last.png"></a>
         </div>
       </div>
-     <!-- <ul>
-        <li class="pageFirst"><a href="#" tabindex="111" class="showBalloon" title="맨 처음 페이지"><img src="images/first.png" alt="double left arrow"></a></li>
-        <li class="pagePrev"><a href="#" tabindex="112" class="showBalloon" title="이전 페이지"><img src="images/prev.png" alt="left arrow"></a></li>
-        <li class="active"><a href="#" tabindex="113">1</a></li>
-        <li><a href="#" tabindex="114">2</a></li>
-        <li><a href="#" tabindex="115">3</a></li>
-        <li><a href="#" tabindex="116">4</a></li>
-        <li class="bdr"><a href="#" tabindex="117">5</a></li>
-        <li class="pageNext"><a href="#" tabindex="118" class="showBalloon" title="다음 페이지"><img src="images/next.png" alt="right arrow"></a></li>
-        <li class="pageLast"><a href="#" tabindex="119" class="showBalloon" title="맨 마지막 페이지"><img src="images/last.png" alt="double right arrow"></a></li>
-      </ul>-->
     </div><!-- id="boardPagination" -->
   </div><!-- class="boardContents" -->
 </div>

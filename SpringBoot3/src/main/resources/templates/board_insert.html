@@ -17,12 +17,13 @@
             <h2>새 글 쓰기</h2>
         </div><!-- class="contentsTitle" -->
 
+        <p th:if="${msg}" th:text="${msg}" style="color:blue"></p>
 
         <form method="get" th:action="@{/board_save}">
             <div class="boardInsertHeader cf">
                 <div class="insertHeaderBox01">
                     <label for="title">제목</label>
-                    <textarea name="title" id="title"></textarea>
+                    <input type="text" name="title" id="title"></input>
                 </div>
                 <div class="insertHeaderBox02">
                     <label for="author">작성자</label>

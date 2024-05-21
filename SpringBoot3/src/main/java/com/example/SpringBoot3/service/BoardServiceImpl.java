@@ -4,6 +4,7 @@ import com.example.SpringBoot3.entity.Board;
 import com.example.SpringBoot3.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +18,12 @@ public class BoardServiceImpl implements BoardService{
     private final BoardRepository repository;
 
     @Override
-    public Iterable<Board> selectAll(Pageable pageable) {
+    public Page<Board> boardSearchList(String searchKeyword, Pageable pageable){
+        return repository.findByTitleContaining(searchKeyword,pageable);
+    }
+
+    @Override
+    public Page<Board> selectAll(Pageable pageable) {
 
         return repository.findAll(pageable);
     }
@@ -31,21 +37,21 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public void insertBoard(Board board) throws Exception {
+    public void insertBoard(Board board){
 
         repository.save(board);
 
     }
 
     @Override
-    public void updateBoard(Board board) throws Exception {
+    public void updateBoard(Board board) {
 
         repository.save(board);
 
     }
 
     @Override
-    public void deleteBoardByNo(int no) throws Exception {
+    public void deleteBoardByNo(int no){
         repository.deleteById(no);
     }
 }

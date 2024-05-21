@@ -52,6 +52,7 @@
           <li class="showBalloon" title="자주묻는 질문"><a href="qna" tabindex="2"><img src="/images/customer.png" alt="자주묻는 질문">자주묻는 질문</a></li>
           <li class="showBalloon" title="언어"><a href="#" tabindex="3"><img src="/images/korea.png" alt="한국어">대한민국 - 한국어</a></li>
           <li class="showBalloon" title="회원가입" sec:authorize="isAnonymous()"><a href="#" tabindex="4" th:onclick="|location.href='@{/join}'|"><img src="/images/join.png" alt="회원가입">회원가입</a></li>
+          <li class="showBalloon" title="회원가입" sec:authorize="isAuthenticated()">로그인 중 입니다.</a></li>
         </ul>
       </div><!-- class="mainGnb" -->
     </div><!-- class="gnbWrap" -->

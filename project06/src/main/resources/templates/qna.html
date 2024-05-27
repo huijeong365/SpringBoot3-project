@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{commons/layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--대체되는 내용-->
+<div layout:fragment="content">
+  <div class="qnaContents cf">
+    <div class="qnaTitle">
+      <h2>자주 묻는 질문</h2>
+    </div><!-- class="qnaTitle" -->
+    <div id="qnaSearch" class="cf">
+      <input type="text" id="search" class="guideText" value="궁금한 것을 검색해 보세요">
+    </div><!-- id="qnaSearch" -->
+    <div id="qnaSearchList" class="cf">
+      <ul>
+        <li><button class="search showBalloon" title="전체 선택 보기" id="tab00" type="button">전체</button></li>
+        <li><button class="search showBalloon" title="스카이패스 선택" id="tab01" type="button">스카이패스</button></li>
+        <li><button class="search showBalloon" title="마일리지 선택" id="tab02" type="button">마일리지 사용</button></li>
+        <li><button class="search showBalloon" title="예약/좌석배정 선택" id="tab03" type="button">예약/좌석배정</button></li>
+        <li><button class="search showBalloon" title="변경/환불 선택" id="tab04" type="button">변경/환불</button></li>
+        <li><button class="search showBalloon" title="항공권 선택" id="tab05" type="button">항공권</button></li>
+        <li><button class="search showBalloon" title="수하물 선택" id="tab06" type="button">수하물</button></li>
+        <li><button class="search showBalloon" title="도움이 필요한 고객 선택" id="tab07" type="button">도움이 필요한 고객</button></li>
+        <li><button class="search showBalloon" title="기내식 선택" id="tab08" type="button">기내식</button></li>
+        <li><button class="search showBalloon" title="기내서비스 선택" id="tab09" type="button">기내서비스</button></li>
+        <li><button class="search showBalloon" title="공항/라운지 선택" id="tab10" type="button">공항/라운지</button></li>
+        <li><button class="search showBalloon" title="홈페이지 이용 선택" id="tab11" type="button">홈페이지 이용</button></li>
+        <li><button class="search showBalloon" title="기타 선택" id="tab12" type="button">기타</button></li>
+      </ul>
+    </div><!-- id="qnaSearchList" -->
+    <div id="qnaDetail" class="cf">
+
+    </div> <!-- id="qnaDetail" -->
+    <div id="qnaPagination" class="cf">
+      <ul>
+        <li class="pageFirst"><a href="#" tabindex="82" class="showBalloon" title="맨 처음 페이지"><img src="images/first.png" alt="double left arrow"></a></li>
+        <li class="pagePrev"><a href="#" tabindex="83" class="showBalloon" title="이전 페이지"><img src="images/prev.png" alt="left arrow"></a></li>
+        <li class="active"><a href="#" tabindex="84">1</a></li>
+        <li><a href="#" tabindex="85">2</a></li>
+        <li><a href="#" tabindex="86">3</a></li>
+        <li><a href="#" tabindex="87">4</a></li>
+        <li class="bdr"><a href="#" tabindex="88">5</a></li>
+        <li class="pageNext"><a href="#" tabindex="89" class="showBalloon" title="다음 페이지"><img src="images/next.png" alt="right arrow"></a></li>
+        <li class="pageLast"><a href="#" tabindex="90" class="showBalloon" title="맨 마지막 페이지"><img src="images/last.png" alt="double right arrow"></a></li>
+      </ul>
+    </div><!-- id="qnaPagination" -->
+  </div><!-- class="qnaContents" -->
+</div>
+</body>
+</html>

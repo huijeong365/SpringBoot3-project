@@ -1,0 +1,51 @@
+﻿html{overflow-y: scroll;}
+*{margin: 0; padding: 0;}
+ul, li{list-style: none;}
+a{text-decoration: none;}
+img{border: 0;}
+body{font-family: '맑은 고딕', '돋움', sans-serif;}
+.cf:after{content: ''; display: block; clear: both;}
+.fl{float: left;}
+.fr{float: right;}
+.balloon{background: #fff; color: #555; padding: 3px 10px; position: absolute; display: none; font-size: 14px; font-weight: bold; border: 1px solid #333; border-radius: 5px;}
+.balloon:after{content:""; display:block; float:left; background:url(../../images/favi.png) no-repeat center center; width:18px; height:18px; margin: 0px 5px 0 5px; }
+
+/* 질문게시판 상단 */
+.qnaContents{width: 1420px; margin: 0 auto; padding-top: 74px; padding-bottom:35px;}
+    .qnaTitle h2{font-size: 32px; color: #333333; margin-bottom: 46px;}
+    #qnaSearch{text-align: center; padding-bottom: 53px;}
+        #qnaSearch #search{border-radius: 30px; border: 1px solid #d9dbe1; height: 56px; width: 841px; font-size: 18px; padding-left: 23px;}
+        #qnaSearch #search:hover{border: 1px solid #0064de;}
+        .guide{color: #cccccc;}
+    #qnaSearchList{margin-bottom: 70px;}
+    #qnaSearchList li{float: left;}
+    #qnaSearchList li .search{height: 56px; border-radius: 30px; padding: 11px 16px 13px; font-size: 17px; text-align: center; color: #00256c;
+        background-color: #fff; border: 1px solid #d9dbe1; min-width: 162px; margin-right: 16px; font-weight: bold; margin-bottom: 10px; cursor: pointer;}
+    #qnaSearchList li .search:hover{background-color: #00256c; color: #ffffff; border: 1px solid #00256c;}
+
+/* 게시판 내용  */  
+#qnaDetail{margin-bottom: 70px;  border-top: 1px solid #d9dbe1; }
+#qnaDetail > div > div{width: 50px; line-height: 100px; height: 100px; text-align: center; float: left; font-size: 18px; border-bottom: 1px solid #d9dbe1;}
+#qnaDetail > div > div:first-child{font-weight: bold;}
+#qnaDetail > div:hover > div{background-color: #f3f4f8;}
+
+#qnaDetail .title{width: 1320px; text-align: justify;}
+#qnaDetail .title.closed{cursor: pointer; width: 1320px; text-align: justify;}
+#qnaDetail .contentWrap{height: auto; width: 100%; text-align: left;}
+#qnaDetail .contentWrap.closed{display: none;}
+.contentWrap{background-color: #f3f4f8;}
+.content{text-align: left; padding: 30px 50px; line-height: 250%; font-weight: normal; font-size: 16px;}
+
+/* 페이지이동 */
+#qnaPagination{width: 260px; margin: 0 auto;  height: 57px;}
+#qnaPagination ul{margin-left: 26px;}
+#qnaPagination ul li{float: left;padding: 0px 6px; border-right: 1px solid #c1c1c1;}
+#qnaPagination ul .pageFirst{padding-right: 2px; border-right: none;}
+#qnaPagination ul .pagePrev{padding-left: 2px; padding-right: 5px; border-right: none;}
+#qnaPagination ul .pageNext{padding-left: 5px; padding-right: 2px; border-right: none;}
+#qnaPagination ul .pageLast{padding-left: 2px; border-right: none;}
+#qnaPagination ul .bdr{border-right: none;}
+#qnaPagination ul li img{vertical-align: middle; height: 12px; box-sizing: border-box;}
+#qnaPagination ul li a{display: block; font-size: 0.9em; line-height: 13px; color: #a6a6a6;}
+#qnaPagination ul .active a{color: #333333; }
+#qnaPagination ul li a:hover{color: #00256c;}

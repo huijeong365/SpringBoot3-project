@@ -1,0 +1,154 @@
+﻿html{overflow-y: scroll;}
+*{margin: 0; padding: 0;}
+ul, li{list-style: none;}
+a{text-decoration: none; color: #333333;}
+img{border: 0;}
+body{font-family: "Malgun Gothic", "맑은 고딕", "돋움", sans-serif;}
+.cf:after{content: ''; display: block; clear: both;}
+.fl{float: left;}
+.fr{float: right;}
+h1, dt{display: none;}
+
+
+/* 상단 예약 서비스  */
+
+    #airService{width:1420px; height: 790px; margin: 0 auto; overflow: hidden; position: relative; padding-bottom: 20px;}
+	
+	#visual{position: absolute;}
+	.touch_bullet{position: absolute; top: 75%; left: 665px; margin-left: -52px;}
+	.touch_bullet li{float: left;}
+	.touch_left_btn{position: absolute; top: 50%; left: 250px; margin-top: -25px;}
+	.touch_right_btn{position: absolute; top: 50%; left: 1050px; margin-top: -25px;}
+	#contents{width:1100px; margin:0 auto;/*  position:relative; top:1px; position:relative; top:1px; */ }
+
+	#visual .swipe {overflow: hidden; visibility: hidden;position: relative;}
+	#visual .swipe-wrap {overflow: hidden;position: relative;}
+	#visual .swipe-wrap > li {float:left; width:100%; position: relative; }
+
+	#visual .stop{position: absolute; left: 783px; top: 75%;}
+	#visual .stop img{width: 15px; }
+	#visual .start{position: absolute; left: 766px; top: 75%;}
+	#visual .start img{width: 15px; }
+
+	#mySwipe img{width:1420px;}
+
+    #airServiceBooking{position: absolute; left: 107px; top:412px; width:1206px; margin: 0 auto; height: 317px; border-radius: 24px;}
+    #airServiceBooking>ul{overflow: hidden; margin: 0 auto;}
+    #airServiceBooking>ul>li{float: left;}
+    #airServiceBooking>ul>li>a{float:left; margin-left: 1px; display: block; font-size: 16px; color: #ffffff; text-align: center; display: block; height: 61px; border-top-left-radius: 20px; border-top-right-radius: 20px;  width: 200px; line-height: 61px; font-weight: bold;}
+    #airServiceBooking>ul>li:nth-child(1)>a{background-color: rgba(0,37,108,.8);}
+    #airServiceBooking>ul>li:nth-child(2)>a{background-color: rgba(124,6,50,.8);}
+    #airServiceBooking>ul>li:nth-child(3)>a{background-color: rgba(34,42,115,.8);}
+    #airServiceBooking>ul>li:nth-child(4)>a{background-color: rgba(212,157,2,.8);}
+    #airServiceBooking>ul>li:nth-child(5)>a{background-color: rgba(100,90,80,.8);}
+    #airServiceBooking>ul>li:nth-child(6)>a{background-color: rgba(51,109,63,.8);}
+    
+    #airServiceBooking>ul>li>a:hover{text-decoration: underline;}
+    #airServiceBooking>ul>li>a.on{background: #fff; color: #333; cursor: default;}
+    #airServiceBooking>ul>li>a.on:hover{text-decoration: none;}
+
+       
+        .tabItem{width: 1116px; height: 200px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; background-color: #ffffff; padding: 32px 45px 10px;  box-shadow: 0 0 10px 5px rgba(0,0,0,.1);}
+            .tabItem >.bookingTab{width: 242px; height: 45px; border: 1px solid #d9dbe1; border-radius: 32px; line-height: 45px; text-align: center; float: left; color: #00256c;} 
+            .tabItem >.bookingTab>.buttonsBooking>label:nth-of-type(1){width: 87px; cursor: pointer; }
+            .tabItem >.bookingTab>.buttonsBooking>label:nth-of-type(2){width: 155px; cursor: pointer; }
+            .tabItem >.bookingTab>.buttonsBooking>label:hover{text-decoration: underline; }
+            
+            .tabItem input{display: none;}
+            #tabItem-1>.bookingTab>input:nth-of-type(1):checked ~ .buttonsBooking > label:nth-of-type(1) {display: block; width: 87px; height: 47px; background: #00256c; color: #ffffff; text-decoration: underline; font-weight: bold; border-radius: 32px; border:none; text-align: center; line-height: 47px; cursor: pointer; float: left; margin-top: -1px; }
+            #tabItem-1>.bookingTab>input:nth-of-type(2):checked ~ .buttonsBooking > label:nth-of-type(2) {display: block; width: 155px; height: 47px; background: #00256c; color: #ffffff; text-decoration: underline; font-weight: bold; border-radius: 32px; border:none; text-align: center; line-height: 47px; cursor: pointer; float: right; margin-top: -1px;}
+       
+            .tabItem >.bookingType{width: 230px; margin-left: 54px; float: left; font-weight: bold; font-size: 16px; margin-top: 8px;}
+            .tabItem >.bookingType li{float: left; margin-right: 20px;}
+            .tabItem >.bookingType li:hover{border-bottom: 2px solid #de001b;}
+
+            .tabItem > .bookingBottom{height: 83px; margin-top: 90px;}
+            .tabItem > .bookingBottom > div{width: 170px;  float: left; margin-right: 30px; border-bottom: 1px solid #000000; cursor: pointer; padding-top: 33px;}
+            .tabItem > .bookingBottom > div > span{font-size:16px ; color:#767676; margin-top: 20px;}
+            .tabItem > .bookingBottom > div img{float: right; height: 16px; margin-right: 10px;}
+
+            .tabItem > .bookingBottom > button{width: 116px; height: 55px; background-color: #00256c; float: left; border:none; border-radius: 14px; font-size: 16px; color: #ffffff; font-weight: bold; cursor: pointer;} 
+
+/* 이용 가이드 */
+
+.mainGuide { width: 1420px; height: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+.swiper-wrapper { position: relative; width: 100%; height: 100%; z-index: 1; display: flex; transition-property: transform; transition-timing-function: var(--swiper-wrapper-transition-timing-function,initial); box-sizing: content-box; }
+.swiper-slide { text-align: center; font-size: 18px; background: #fff; display: flex; justify-content: center; align-items: center; }
+.swiper-slide img{width: 473.333px;}
+
+.swiper-button-next, .swiper-button-prev { position: absolute; top: var(--swiper-navigation-top-offset,50%); width: calc(var(--swiper-navigation-size)/ 44 * 27); height: var(--swiper-navigation-size); margin-top: calc(0px - (var(--swiper-navigation-size)/ 2)); z-index: 10; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--swiper-navigation-color,var(--swiper-theme-color)); }
+ 
+    
+
+/* 공지사항 */
+#mainNotice{margin: 0 auto; width: 1420px; margin-bottom: 80px; }   
+    #noticeHeading{width: 576px; height: 57px; margin-bottom: 19px;}
+    #noticeHeading h2{font-size: 29px; font-weight: bold; color: #333333; float: left;}
+    #noticeHeading a{font-size: 14px; color: #333333; float: right; line-height: 57px;}
+    #noticeHeading a:hover{color: #0064de; font-weight: bold;}
+
+        .noticeList{width: 576px; height: 350px; margin-right: 40px;}
+        .noticeList li{height: 60px; border-bottom: 1px solid #767676; line-height: 60px;}
+        .noticeList li:first-child{border-top: 1px solid #767676;}
+        .noticeList li a{font-size: 16px; font-weight: bold; color:#333333;}
+        .noticeList li a:hover{text-decoration: underline;}
+        .noticeList li span{float: right; font-size: 14px; padding-right: 10px; font-weight: normal; color:#333333;}
+
+        .weather1, .weather2{width: 250px; height: 310px; margin-right: 30px; border-radius: 8px; text-align: center; padding-top: 40px;}
+        .weather1 h2, .weather2 h2{color:#fff; font-size: 14px; font-weight: normal; }
+        .weather1 .hour1{color:#fff; font-size: 35px; font-weight: bold;}
+        .weather1 .date1{color:#fff; font-size: 14px;}
+        .weather1 .cicon1 img{width: 130px;}
+        .weather1 .ctemp1{color:#fff; font-size: 40px; font-weight: bold;}
+        .weather1 .clowtemp1{color:#fff; font-size: 14px; margin-left: 90px;}
+        .weather1 .chightemp1{color:#fff; font-size: 14px;}
+
+        .weather2 .hour2{color:#fff; font-size: 35px; font-weight: bold;}
+        .weather2 .date2{color:#fff; font-size: 14px;}
+        .weather2 .cicon2 img{width: 130px;}
+        .weather2 .ctemp2{color:#fff; font-size: 40px; font-weight: bold;}
+        .weather2 .clowtemp2{color:#fff; font-size: 14px; margin-left: 90px;}
+        .weather2 .chightemp2{color:#fff; font-size: 14px;}
+     
+        
+
+
+        .noticeBanner{width: 244px; height: 350px; position: relative; overflow: hidden;  border-radius: 8px;}
+        .noticeBanner a{position: absolute; left: 100%;  }
+        .noticeBanner a img{display: block; width: 244px; height: 350px; float: left;}
+
+        #countWrap{background: url(../images/timeevent.png) no-repeat; margin: 40px auto; width: 1420px; height: 200px; position: relative; border-radius: 15px;}
+        #countWrap > h2{color: white; font-weight: bold; font-size: 40px; text-align: center; padding-top: 20px;}
+        #countWrap .counter{left: 35%; top: 57%; position: absolute;}
+
+    
+
+
+/* 아이콘 배너 */
+#mainIconBanner{height: 240px; background-color:#d0e7f6; padding: 60px 20px; }   
+    .iconSection{width: 1420px; margin: 0 auto;}
+        #iconBannerHeading{margin-bottom: 30px; font-size: 28px; font-weight: bold; color: #333333;}  
+        #iconBannerHeading h2{font-size: 28px; font-weight: bold; color: #333333;} 
+        #iconBanner ul{padding-top: 7px; justify-content: center; display: flex;}
+        #iconBanner ul li{float: left; margin: 0 22px 0 0; text-align: center; height: 205px; position: relative; width: 100% }
+        #iconBanner ul li .bannerIcon{background-color: rgba(255,255,255,.5); padding: 20px; border-radius: 10px;}
+        #iconBanner ul li .bannerText{position: absolute; margin: 20px auto 0 auto; border-radius: 10px; background: #ffffff; display: none;   white-space: nowrap; width: 100%;} 
+        #iconBanner ul li .bannerText span{font-weight:normal; margin: 0 5px; text-align: center; line-height: 50px;} 
+        #iconBanner ul li .bannerText span:hover{text-decoration: underline;} 
+        #iconBanner ul li .bannerText:after{content:''; position: absolute; top: -10px; left: 50%; margin-left: -10px; border-bottom: 10px solid #ffffff; border-left: 10px solid transparent; border-right: 10px solid transparent;}
+        #iconBanner ul li img{width: 55px; padding-top: 15px;}
+        #iconBanner li:hover .bannerIcon{background-color: #ffffff; text-decoration: underline;}
+        #iconBanner li:last-child{margin: 0;}
+        #iconBanner li span{color: #333333; font-size: 16px; font-weight: bold; line-height: 16px;}
+
+/* 팝업창 스타일	 */
+.popWrap{position: absolute; top: 124px; left: 200px; z-index: 987; box-shadow: 3px 4px 5px; display: none;}
+.popWrap > img{width: 520px; height: 520px;}
+.popWrap .popText{position: absolute; bottom: 0; right: 0; width: 100%; height: 21px; background: #efefef;}
+.popWrap .popTodayBtn{border: 0; position: absolute; bottom: 1px; right: 60px; width: 145px; height: 20px; font-size: 13px; cursor: pointer;}
+.popWrap .popCloseBtn{position: absolute; bottom: 1px; right: 15px; height: 20px; font-size: 13px; cursor: pointer;}
+
+
+
+
+    
